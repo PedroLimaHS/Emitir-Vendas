@@ -1,0 +1,71 @@
+object frmLogin: TfrmLogin
+  Left = 702
+  Height = 301
+  Top = 229
+  Width = 223
+  Caption = 'Entrar no sistema'
+  ClientHeight = 301
+  ClientWidth = 223
+  LCLVersion = '2.0.10.0'
+  object Image1: TImage
+    Left = 0
+    Height = 90
+    Top = 0
+    Width = 223
+    Align = alTop
+  end
+  object btnEntrar: TSpeedButton
+    Left = 8
+    Height = 40
+    Top = 231
+    Width = 60
+    Caption = 'entrar'
+    OnClick = btnEntrarClick
+  end
+  object btnSair: TSpeedButton
+    Left = 88
+    Height = 40
+    Top = 231
+    Width = 60
+    Caption = 'sair'
+    OnClick = btnSairClick
+  end
+  object edtUsuario: TEdit
+    Left = 8
+    Height = 23
+    Top = 128
+    Width = 128
+    TabOrder = 0
+  end
+  object edtSenha: TEdit
+    Left = 8
+    Height = 23
+    Top = 192
+    Width = 128
+    EchoMode = emPassword
+    PasswordChar = '*'
+    TabOrder = 1
+  end
+  object Label1: TLabel
+    Left = 8
+    Height = 15
+    Top = 104
+    Width = 40
+    Caption = 'Usuario'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 8
+    Height = 15
+    Top = 167
+    Width = 32
+    Caption = 'Senha'
+    ParentColor = False
+  end
+  object QryLogin: TZQuery
+    Connection = DtmConexao.zConexao
+    Params = <>
+    Left = 176
+    Top = 120
+  end
+end

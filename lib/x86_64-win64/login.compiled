@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="E:\lazarus\fpc\3.2.0\bin\x86_64-win64\fpc.exe" Date="1357350767"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -WG -l -vewnhibq -FiE:\LOGIN_BASICO\lib\x86_64-win64 &quot;-FuE:\libs lazarus\zeos\packages\lazarus\lib\zcomponent\x86_64-win64&quot; -FuE:\lazarus\components\ideintf\units\x86_64-win64\win32 -FuE:\lazarus\components\lazcontrols\lib\x86_64-win64\win32 &quot;-FuE:\libs lazarus\zeos\packages\lazarus\lib\zdbc\x86_64-win64&quot; -FuE:\lazarus\lcl\units\x86_64-win64\win32 &quot;-FuE:\libs lazarus\zeos\packages\lazarus\lib\zplain\x86_64-win64&quot; &quot;-FuE:\libs lazarus\zeos\packages\lazarus\lib\zparsesql\x86_64-win64&quot; -FuE:\lazarus\lcl\units\x86_64-win64 &quot;-FuE:\libs lazarus\zeos\packages\lazarus\lib\zcore\x86_64-win64&quot; -FuE:\lazarus\components\lazutils\lib\x86_64-win64 -FuE:\lazarus\packager\units\x86_64-win64 -FuE:\LOGIN_BASICO\ -FUE:\LOGIN_BASICO\lib\x86_64-win64\ -FEE:\LOGIN_BASICO\ -oE:\LOGIN_BASICO\login.exe -dLCL -dLCLwin32 login.lpr"/>
+</CONFIG>
