@@ -1,46 +1,56 @@
 object FrmPrincipal: TFrmPrincipal
-  Left = 452
-  Height = 371
-  Top = 206
-  Width = 745
-  Caption = 'FrmPrincipal'
+  Left = 470
+  Height = 391
+  Top = 205
+  Width = 657
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'Financeiro'
   ClientHeight = 371
-  ClientWidth = 745
+  ClientWidth = 657
+  Color = 11089710
+  Menu = MainMenu1
   OnShow = FormShow
-  LCLVersion = '2.0.10.0'
-  object DBGrid1: TDBGrid
-    Left = 120
-    Height = 356
-    Top = 0
-    Width = 608
-    Color = clWindow
-    Columns = <    
+  Position = poScreenCenter
+  LCLVersion = '2.0.2.0'
+  object stb_Principal: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 348
+    Width = 657
+    Font.Color = clAppWorkspace
+    Panels = <    
       item
-        Title.Caption = 'Nome'
-        FieldName = 'nome'
+        Width = 500
+      end    
+      item
+        Width = 50
       end>
-    DataSource = dsCliente
-    TabOrder = 0
+    ParentFont = False
+    SimplePanel = False
   end
-  object dsCliente: TDataSource
-    DataSet = Qrycliente
-    Left = 32
-    Top = 96
-  end
-  object Qrycliente: TZReadOnlyQuery
-    Connection = DtmConexao.zConexao
-    Params = <>
-    Left = 32
-    Top = 168
-    object Qryclientenome: TStringField
-      FieldKind = fkData
-      FieldName = 'nome'
-      Index = 0
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = False
-      Size = 50
+  object MainMenu1: TMainMenu
+    left = 688
+    top = 240
+    object MenuItem1: TMenuItem
+      Caption = 'Cadastros'
+      object MenuItem3: TMenuItem
+        Caption = 'Clientes'
+        ShortCut = 16451
+        OnClick = MenuItem3Click
+      end
     end
+    object MenuItem2: TMenuItem
+      Caption = 'Relatórios'
+      object MenuItem4: TMenuItem
+        Caption = 'Clientes'
+        OnClick = MenuItem4Click
+      end
+    end
+  end
+  object Timer1: TTimer
+    OnTimer = Timer1Timer
+    left = 480
+    top = 176
   end
 end

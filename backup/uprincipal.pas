@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, DBGrids, Menus,
-  ExtCtrls, Buttons, StdCtrls, ComCtrls, U_Util;
+  ExtCtrls, Buttons, StdCtrls, ComCtrls, U_Util, u_RelatorioClientes;
 
 type
 
@@ -38,7 +38,7 @@ var
 implementation
 
 uses
-  Ulogin, uClientes;
+  Ulogin, uClientes,U_FiltroPesquisaCliente;
 
 {$R *.lfm}
 
@@ -53,7 +53,7 @@ begin
     if (not Application.Terminated) then
     begin
       stb_Principal.Panels.Items[0].Text := 'Usuário: ' + usuarioLogado.nome;
-      Timer1.Create();
+      Timer1.Enabled:= true;
     end;
   finally
     FreeAndNil(frmLogin);
@@ -73,6 +73,15 @@ end;
 procedure TFrmPrincipal.MenuItem4Click(Sender: TObject);
 begin
 
+
+
+  FiltroPesquisaCliente := TFiltroPesquisaCliente.Create(Self);
+  try
+    FiltroPesquisaCliente.ShowModal;
+
+  finally
+    FreeAndNil(FiltroPesquisaCliente);
+  end;
 end;
 
 procedure TFrmPrincipal.SpeedButton1Click(Sender: TObject);

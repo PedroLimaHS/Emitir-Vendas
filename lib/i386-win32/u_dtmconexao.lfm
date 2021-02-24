@@ -1,8 +1,8 @@
 object DtmConexao: TDtmConexao
   OldCreateOrder = False
   Height = 215
-  HorizontalOffset = 367
-  VerticalOffset = 3
+  HorizontalOffset = 1023
+  VerticalOffset = 406
   Width = 293
   PPI = 96
   object zConexao: TZConnection
@@ -14,7 +14,6 @@ object DtmConexao: TDtmConexao
       'controls_cp=CP_UTF8'
     )
     AutoCommit = False
-    Connected = True
     HostName = 'localhost'
     Port = 1433
     Database = 'Provider=SQLOLEDB.1;Password='''';Persist Security Info=True;User ID=''sa'';Initial Catalog=''SingemSQL'';Data Source=''localhost\SQLEXPRESS'''

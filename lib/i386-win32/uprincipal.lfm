@@ -36,13 +36,14 @@ object FrmPrincipal: TFrmPrincipal
       Caption = 'Cadastros'
       object MenuItem3: TMenuItem
         Caption = 'Clientes'
+        ShortCut = 16451
         OnClick = MenuItem3Click
       end
     end
     object MenuItem2: TMenuItem
       Caption = 'Relatórios'
       object MenuItem4: TMenuItem
-        Caption = 'relatórios'
+        Caption = 'Clientes'
         OnClick = MenuItem4Click
       end
     end

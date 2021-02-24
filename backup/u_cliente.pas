@@ -9,17 +9,17 @@ uses
 
 type
   Tcliente = class
-    cliente: String
-    nome: String
-    endereco: String
-    bairro: String
-    cidade: String
-    up: String
-    cep: String
-    inscricao: String
-    cgc: String
-    fone: String
-    email: String
+    cliente: String;
+    nome: String;
+    endereco: String;
+    bairro: String;
+    cidade: String;
+    up: String;
+    cep: String;
+    inscricao: String;
+    cgc: String;
+    fone: String;
+    email: String;
 
   end;
 

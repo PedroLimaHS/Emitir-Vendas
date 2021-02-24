@@ -1,0 +1,24 @@
+object DtmConexao: TDtmConexao
+  OldCreateOrder = False
+  Height = 215
+  HorizontalOffset = 1035
+  VerticalOffset = 406
+  Width = 293
+  object zConexao: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
+    Catalog = 'SingemSQL'
+    Properties.Strings = (
+      'AutoEncodeStrings=True'
+      'controls_cp=CP_UTF8'
+    )
+    AutoCommit = False
+    HostName = 'localhost'
+    Port = 1433
+    Database = 'Provider=SQLOLEDB.1;Password='''';Persist Security Info=True;User ID=''sa'';Initial Catalog=''SingemSQL'';Data Source=''localhost\SQLEXPRESS1'''
+    User = 'sa'
+    Protocol = 'ado'
+    Left = 16
+    Top = 8
+  end
+end

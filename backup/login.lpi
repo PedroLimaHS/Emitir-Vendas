@@ -26,18 +26,21 @@
       <FormatVersion Value="2"/>
       <Modes Count="0"/>
     </RunParams>
-    <RequiredPackages Count="3">
+    <RequiredPackages Count="4">
       <Item1>
-        <PackageName Value="FCL"/>
+        <PackageName Value="frce"/>
       </Item1>
       <Item2>
-        <PackageName Value="zcomponent"/>
+        <PackageName Value="FCL"/>
       </Item2>
       <Item3>
-        <PackageName Value="LCL"/>
+        <PackageName Value="zcomponent"/>
       </Item3>
+      <Item4>
+        <PackageName Value="LCL"/>
+      </Item4>
     </RequiredPackages>
-    <Units Count="10">
+    <Units Count="15">
       <Unit0>
         <Filename Value="login.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -105,6 +108,45 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="U_Usuario"/>
       </Unit9>
+      <Unit10>
+        <Filename Value="u_dtmutil.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DtmUtil"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="U_dtmUtil"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="u_relatorioclientes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmRelatorioClientes"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="u_RelatorioClientes"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="u_relatoriobase.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="relatoriobase"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="u_relatorioBase"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="u_frmfiltrorelatoriobase.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmFiltroRelatorioBase"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="U_FrmFiltroRelatorioBase"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="u_filtropesquisacliente.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FiltroPesquisaCliente"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="U_FiltroPesquisaCliente"/>
+      </Unit14>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

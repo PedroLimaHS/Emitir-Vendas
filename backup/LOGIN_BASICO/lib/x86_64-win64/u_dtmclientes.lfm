@@ -1,0 +1,163 @@
+object DtmClientes: TDtmClientes
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 214
+  HorizontalOffset = 856
+  VerticalOffset = 123
+  Width = 298
+  object Qrycliente: TZReadOnlyQuery
+    Connection = DtmConexao.zConexao
+    SQL.Strings = (
+      'select cliente,Nome,Endereco,Bairro,Cidade,UF,CEP,CGC,Fone,email from Cad_Clientes'
+    )
+    Params = <>
+    Left = 24
+    Top = 16
+    object Qryclientenome: TStringField
+      FieldKind = fkData
+      FieldName = 'nome'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 200
+    end
+    object Qryclientecgc: TStringField
+      FieldKind = fkData
+      FieldName = 'cgc'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 80
+    end
+    object Qryclientefone: TStringField
+      FieldKind = fkData
+      FieldName = 'fone'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 120
+    end
+    object Qryclientecidade: TStringField
+      FieldKind = fkData
+      FieldName = 'cidade'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 120
+    end
+    object Qryclientecliente: TStringField
+      FieldKind = fkData
+      FieldName = 'cliente'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 5
+    end
+    object QryclienteEndereco: TStringField
+      FieldKind = fkData
+      FieldName = 'Endereco'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 100
+    end
+    object QryclienteBairro: TStringField
+      FieldKind = fkData
+      FieldName = 'Bairro'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 30
+    end
+    object QryclienteUF: TStringField
+      FieldKind = fkData
+      FieldName = 'UF'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 2
+    end
+    object QryclienteCEP: TStringField
+      FieldKind = fkData
+      FieldName = 'CEP'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 15
+    end
+    object Qryclienteemail: TStringField
+      FieldKind = fkData
+      FieldName = 'email'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 50
+    end
+  end
+  object QryPsqCliente: TZReadOnlyQuery
+    Connection = DtmConexao.zConexao
+    Params = <>
+    Left = 96
+    Top = 16
+    object Qryclientenome1: TStringField
+      FieldKind = fkData
+      FieldName = 'nome'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 200
+    end
+    object Qryclientecgc1: TStringField
+      FieldKind = fkData
+      FieldName = 'cgc'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 80
+    end
+    object Qryclientefone1: TStringField
+      FieldKind = fkData
+      FieldName = 'fone'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 120
+    end
+    object Qryclientecidade1: TStringField
+      FieldKind = fkData
+      FieldName = 'cidade'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 120
+    end
+  end
+end

@@ -1,0 +1,29 @@
+object DtmClientes: TDtmClientes
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 214
+  HorizontalOffset = 362
+  VerticalOffset = 254
+  Width = 298
+  PPI = 96
+  object Qrycliente: TZReadOnlyQuery
+    Connection = DtmConexao.zConexao
+    Active = True
+    SQL.Strings = (
+      'select nome FROM CAD_CLIENTES'
+    )
+    Params = <>
+    left = 24
+    top = 16
+    object Qryclientenome: TStringField
+      FieldKind = fkData
+      FieldName = 'nome'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 200
+    end
+  end
+end
