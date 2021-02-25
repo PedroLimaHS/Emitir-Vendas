@@ -1,7 +1,7 @@
 object FrmCliente: TFrmCliente
-  Left = 1289
+  Left = 408
   Height = 455
-  Top = 324
+  Top = 144
   Width = 693
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
@@ -284,17 +284,7 @@ object FrmCliente: TFrmCliente
     Top = 208
     Width = 681
     Caption = 'Implementações'
-    ClientHeight = 71
-    ClientWidth = 677
     TabOrder = 2
-    object btnteste: TButton
-      Left = 596
-      Height = 25
-      Top = 40
-      Width = 75
-      Caption = 'testargrid'
-      TabOrder = 0
-    end
   end
   object DSDropFormaPagamentoCli: TDataSource
     DataSet = DtmClientes.QryFormapagamento

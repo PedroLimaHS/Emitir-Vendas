@@ -13,7 +13,6 @@ type
   { Tfrmpesquisarcliente }
 
   Tfrmpesquisarcliente = class(TForm)
-    btnListar: TSpeedButton;
     btnSair: TSpeedButton;
     DBGrid1: TDBGrid;
     dsCliente: TDataSource;
@@ -89,7 +88,6 @@ begin
   begin
     if DBGrid1.Columns.Items[liCont].Title.Caption = coluna then
        DBGrid1.Columns.Items[liCont].Title.Font.Color := clBlue
-
     else
         DBGrid1.Columns.Items[liCont].Title.Font.Color := clBlack;
 
@@ -100,11 +98,9 @@ procedure Tfrmpesquisarcliente.edtPesquisaChange(Sender: TObject);
 begin
   if(not dtmClientes.Qrycliente.IsEmpty)then
   begin
-
        dtmClientes.Qrycliente.Locate(gsCampoPesq,edtPesquisa.Text,[loPartialKey, loCaseInsensitive]);
        dtmClientes.QryServicoCli.Locate(gsCampoPesq,edtPesquisa.Text,[loPartialKey, loCaseInsensitive]);
        //dtmClientes.Qrycliente.SQL.Add('ORDER BY' + lblPesquisa.Caption);
-
 
   end;
 end;

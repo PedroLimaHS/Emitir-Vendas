@@ -11,7 +11,7 @@ object FrmCliente: TFrmCliente
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   Position = poOwnerFormCenter
-  LCLVersion = '2.0.10.0'
+  LCLVersion = '2.0.2.0'
   object btnPesquisarCliente: TSpeedButton
     Left = 8
     Height = 26
@@ -298,7 +298,7 @@ object FrmCliente: TFrmCliente
   end
   object DSDropFormaPagamentoCli: TDataSource
     DataSet = DtmClientes.QryFormapagamento
-    Left = 520
-    Top = 8
+    left = 520
+    top = 8
   end
 end

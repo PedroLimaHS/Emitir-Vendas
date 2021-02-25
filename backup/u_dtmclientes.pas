@@ -120,22 +120,16 @@ procedure TDtmClientes.DataModuleCreate(Sender: TObject);
 begin
   try
          Qrycliente.close;
-         Qrycliente.SQL.Text:= 'select cliente,Nome,Endereco,Bairro,Cidade,UF,CEP,CGC,Fone,email from Cad_Clientes order by nome';
+         Qrycliente.SQL.Text:= 'select cliente,Nome,Endereco,Bairro,Cidade,UF,CEP,CGC,Fone,email from Cad_Clientes';
          Qrycliente.Open;
 
-     //Qrycliente.Last;
-     //Qrycliente.First;
-     //ShowMessage(IntToStr(Qrycliente.RecordCount));
-     //ShowMessage(Qrycliente.fieldbyname('nome').AsString);
-
-  except
+      except
     on E:Exception do
     begin
          ShowMessage('Erro ao abrir tabela clientes.'+#13+
          'Erro: ' + e.Message);
          Exit;
     end;
-
   end;
 end;
 
@@ -162,14 +156,14 @@ function TDtmClientes.carregaprodutocliente(strFiltroSql: String): boolean;
                                   'inner join cad_produtos as P on jf.produto = p.produto     '#13 +
                                   'WHERE C.cliente =                                          '#13 +
                                    strFiltroSql +#13;
-         QryServicoCli.SQL.Add('order by C.cliente');
-         QryServicoCli.Open;
-
+                  QryServicoCli.Open;
      Result := not QryServicoCli.IsEmpty;
 
    Except
     on E:Exception do
     begin
+         ShowMessage('Erro ao abrir tabela clientes.'+#13+
+         'Erro: ' + e.Message);
        Result := false
 
     end;

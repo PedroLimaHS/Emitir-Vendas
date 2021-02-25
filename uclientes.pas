@@ -16,7 +16,6 @@ type
 
   TFrmCliente = class(TForm)
     btnPesquisarCliente: TSpeedButton;
-    btnteste: TButton;
     DSDropFormaPagamentoCli: TDataSource;
     DBCBFormaPagamento: TDBComboBox;
     DBComboBox1: TDBComboBox;
@@ -104,11 +103,10 @@ begin
 
     lsFiltroSql := lsFiltroSql + QuotedStr(edtCliente.Text);
 
-
     dtmClientes.carregaprodutocliente(lsFiltroSql);
 
     dtmClientes.QryServicoCli.FetchAll;
-   StringGrid1.RowCount:= dtmClientes.QryServicoCli.RecordCount + 1;
+    StringGrid1.RowCount:= dtmClientes.QryServicoCli.RecordCount + 1;
 
    for servcount := 1 to dtmClientes.QryServicoCli.RecordCount do
    begin

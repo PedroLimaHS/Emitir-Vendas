@@ -13,7 +13,6 @@ type
   { Tfrmpesquisarcliente }
 
   Tfrmpesquisarcliente = class(TForm)
-    btnListar: TSpeedButton;
     btnSair: TSpeedButton;
     DBGrid1: TDBGrid;
     dsCliente: TDataSource;

@@ -16,7 +16,6 @@ type
 
   TFrmCliente = class(TForm)
     btnPesquisarCliente: TSpeedButton;
-    btnteste: TButton;
     DSDropFormaPagamentoCli: TDataSource;
     DBCBFormaPagamento: TDBComboBox;
     DBComboBox1: TDBComboBox;
@@ -77,6 +76,9 @@ procedure TFrmCliente.FormCreate(Sender: TObject);
 begin
   dtmClientes := TDtmClientes.Create(Self);
   inicializandoStringGrid;
+
+
+  // fazer um if verificando se existe a tabela de cliente/produto se nao tiver criar
 end;
 
 procedure TFrmCliente.btnPesquisarClienteClick(Sender: TObject);
