@@ -10,7 +10,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos Y="18"/>
-        <UsageCount Value="145"/>
+        <UsageCount Value="153"/>
       </Unit0>
       <Unit1>
         <Filename Value="uprincipal.pas"/>
@@ -21,7 +21,7 @@
         <UnitName Value="uPrincipal"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="35" Y="67"/>
-        <UsageCount Value="145"/>
+        <UsageCount Value="153"/>
       </Unit1>
       <Unit2>
         <Filename Value="ulogin.pas"/>
@@ -30,10 +30,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Ulogin"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="6"/>
         <TopLine Value="108"/>
         <CursorPos X="7" Y="122"/>
-        <UsageCount Value="145"/>
+        <UsageCount Value="153"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
@@ -43,10 +43,12 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="U_DtmConexao"/>
-        <EditorIndex Value="-1"/>
+        <EditorIndex Value="4"/>
         <TopLine Value="13"/>
-        <CursorPos X="38" Y="28"/>
-        <UsageCount Value="145"/>
+        <CursorPos X="78" Y="26"/>
+        <UsageCount Value="153"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="uclientes.pas"/>
@@ -55,11 +57,12 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uClientes"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="91"/>
-        <CursorPos X="95" Y="114"/>
-        <FoldState Value=" T3iV05012k"/>
-        <UsageCount Value="144"/>
+        <TopLine Value="67"/>
+        <CursorPos X="86" Y="82"/>
+        <FoldState Value=" T3kg031R"/>
+        <UsageCount Value="152"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit4>
@@ -73,7 +76,7 @@
         <TopLine Value="141"/>
         <CursorPos X="88" Y="152"/>
         <FoldState Value=" T3iC0z T1iG0v,"/>
-        <UsageCount Value="137"/>
+        <UsageCount Value="145"/>
         <Loaded Value="True"/>
       </Unit5>
       <Unit6>
@@ -82,7 +85,7 @@
         <UnitName Value="U_Cliente"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="35" Y="12"/>
-        <UsageCount Value="131"/>
+        <UsageCount Value="139"/>
       </Unit6>
       <Unit7>
         <Filename Value="frmpesquisarcliente.pas"/>
@@ -94,14 +97,14 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="19"/>
         <CursorPos X="55" Y="12"/>
-        <UsageCount Value="113"/>
+        <UsageCount Value="121"/>
       </Unit7>
       <Unit8>
         <Filename Value="u_util.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="U_Util"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="93"/>
+        <UsageCount Value="101"/>
       </Unit8>
       <Unit9>
         <Filename Value="u_usuario.pas"/>
@@ -109,7 +112,7 @@
         <UnitName Value="U_Usuario"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="13" Y="11"/>
-        <UsageCount Value="93"/>
+        <UsageCount Value="101"/>
       </Unit9>
       <Unit10>
         <Filename Value="u_dtmutil.pas"/>
@@ -119,7 +122,7 @@
         <UnitName Value="U_dtmUtil"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="67" Y="4"/>
-        <UsageCount Value="87"/>
+        <UsageCount Value="95"/>
       </Unit10>
       <Unit11>
         <Filename Value="u_relatorioclientes.pas"/>
@@ -128,10 +131,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="u_RelatorioClientes"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="5"/>
         <TopLine Value="106"/>
         <CursorPos X="50" Y="132"/>
-        <UsageCount Value="87"/>
+        <UsageCount Value="95"/>
         <Loaded Value="True"/>
       </Unit11>
       <Unit12>
@@ -143,7 +146,7 @@
         <UnitName Value="u_relatorioBase"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="58" Y="48"/>
-        <UsageCount Value="87"/>
+        <UsageCount Value="95"/>
       </Unit12>
       <Unit13>
         <Filename Value="u_frmfiltrorelatoriobase.pas"/>
@@ -155,7 +158,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="11"/>
         <CursorPos X="3" Y="18"/>
-        <UsageCount Value="73"/>
+        <UsageCount Value="81"/>
       </Unit13>
       <Unit14>
         <Filename Value="u_filtropesquisacliente.pas"/>
@@ -164,10 +167,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="U_FiltroPesquisaCliente"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
         <CursorPos X="92" Y="14"/>
-        <UsageCount Value="73"/>
+        <UsageCount Value="81"/>
         <Loaded Value="True"/>
       </Unit14>
       <Unit15>
@@ -178,14 +180,14 @@
         <UnitName Value="U_DtmClientes"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="21" Y="2"/>
-        <UsageCount Value="15"/>
+        <UsageCount Value="14"/>
       </Unit15>
       <Unit16>
         <Filename Value="D:\lazarus\src\component\ZAbstractRODataset.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="3552"/>
         <CursorPos X="30" Y="3560"/>
-        <UsageCount Value="2"/>
+        <UsageCount Value="1"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit16>
       <Unit17>
@@ -193,7 +195,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="3539"/>
         <CursorPos X="51" Y="3545"/>
-        <UsageCount Value="3"/>
+        <UsageCount Value="2"/>
       </Unit17>
       <Unit18>
         <Filename Value="U_frmPesquisarCliente.pas"/>
@@ -203,7 +205,7 @@
         <EditorIndex Value="2"/>
         <TopLine Value="88"/>
         <CursorPos X="73" Y="103"/>
-        <UsageCount Value="34"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit18>
@@ -214,13 +216,13 @@
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="2" Y="6"/>
-        <UsageCount Value="24"/>
+        <UsageCount Value="23"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit19>
       <Unit20>
         <Filename Value="u_dtmutil.lfm"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="4"/>
+        <UsageCount Value="3"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit20>
       <Unit21>
@@ -228,14 +230,14 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="418"/>
         <CursorPos Y="441"/>
-        <UsageCount Value="8"/>
+        <UsageCount Value="7"/>
       </Unit21>
       <Unit22>
         <Filename Value="E:\libs lazarus\zeos\src\dbc\ZDbcAdoStatement.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="240"/>
         <CursorPos Y="269"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit22>
       <Unit23>
@@ -243,21 +245,21 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="1558"/>
         <CursorPos Y="1583"/>
-        <UsageCount Value="7"/>
+        <UsageCount Value="6"/>
       </Unit23>
       <Unit24>
         <Filename Value="E:\lazarus\lcl\include\speedbutton.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="960"/>
         <CursorPos Y="985"/>
-        <UsageCount Value="7"/>
+        <UsageCount Value="6"/>
       </Unit24>
       <Unit25>
         <Filename Value="E:\lazarus\lcl\include\wincontrol.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="5389"/>
         <CursorPos Y="5412"/>
-        <UsageCount Value="7"/>
+        <UsageCount Value="6"/>
       </Unit25>
       <Unit26>
         <Filename Value="E:\lazarus\lcl\lclmessageglue.pas"/>
@@ -265,28 +267,28 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="85"/>
         <CursorPos Y="116"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit26>
       <Unit27>
         <Filename Value="E:\lazarus\lcl\interfaces\win32\win32callback.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="2646"/>
         <CursorPos Y="2680"/>
-        <UsageCount Value="7"/>
+        <UsageCount Value="6"/>
       </Unit27>
       <Unit28>
         <Filename Value="E:\lazarus\lcl\interfaces\win32\win32object.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="392"/>
         <CursorPos Y="407"/>
-        <UsageCount Value="7"/>
+        <UsageCount Value="6"/>
       </Unit28>
       <Unit29>
         <Filename Value="E:\libs lazarus\zeos\src\component\ZAbstractRODataset.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="545"/>
         <CursorPos X="14" Y="562"/>
-        <UsageCount Value="8"/>
+        <UsageCount Value="7"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit29>
       <Unit30>
@@ -295,7 +297,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="5245"/>
         <CursorPos X="59" Y="5254"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="10"/>
       </Unit30>
       <Unit31>
         <Filename Value="E:\lazarus\lcl\grids.pas"/>
@@ -303,7 +305,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="1792"/>
         <CursorPos X="14" Y="1805"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit31>
     </Units>
     <JumpHistory Count="28" HistoryIndex="27">

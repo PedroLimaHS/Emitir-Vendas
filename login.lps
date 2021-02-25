@@ -4,7 +4,7 @@
     <PathDelim Value="\"/>
     <Version Value="11"/>
     <BuildModes Active="Default"/>
-    <Units Count="32">
+    <Units Count="34">
       <Unit0>
         <Filename Value="login.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -31,7 +31,7 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Ulogin"/>
         <EditorIndex Value="6"/>
-        <TopLine Value="108"/>
+        <TopLine Value="117"/>
         <CursorPos X="7" Y="122"/>
         <UsageCount Value="153"/>
         <Loaded Value="True"/>
@@ -57,10 +57,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uClientes"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="67"/>
-        <CursorPos X="86" Y="82"/>
+        <TopLine Value="19"/>
+        <CursorPos X="56" Y="80"/>
         <FoldState Value=" T3kg031R"/>
         <UsageCount Value="152"/>
         <Loaded Value="True"/>
@@ -73,8 +72,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="U_DtmClientes"/>
-        <TopLine Value="141"/>
-        <CursorPos X="88" Y="152"/>
+        <TopLine Value="150"/>
+        <CursorPos X="10" Y="165"/>
         <FoldState Value=" T3iC0z T1iG0v,"/>
         <UsageCount Value="145"/>
         <Loaded Value="True"/>
@@ -202,9 +201,10 @@
         <ComponentName Value="frmpesquisarcliente"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="88"/>
-        <CursorPos X="73" Y="103"/>
+        <TopLine Value="64"/>
+        <CursorPos X="49" Y="80"/>
         <UsageCount Value="37"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -307,6 +307,20 @@
         <CursorPos X="14" Y="1805"/>
         <UsageCount Value="9"/>
       </Unit31>
+      <Unit32>
+        <Filename Value="E:\FinanceiroJF\u_dtmclientes.lfm"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="145"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit32>
+      <Unit33>
+        <Filename Value="E:\FinanceiroJF\u_dtmclientes.pas"/>
+        <UnitName Value="U_DtmClientes"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="145"/>
+        <UsageCount Value="10"/>
+      </Unit33>
     </Units>
     <JumpHistory Count="28" HistoryIndex="27">
       <Position1>

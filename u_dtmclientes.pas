@@ -162,8 +162,7 @@ function TDtmClientes.carregaprodutocliente(strFiltroSql: String): boolean;
                                   'inner join cad_produtos as P on jf.produto = p.produto     '#13 +
                                   'WHERE C.cliente =                                          '#13 +
                                    strFiltroSql +#13;
-         QryServicoCli.SQL.Add('order by C.cliente');
-         QryServicoCli.Open;
+                  QryServicoCli.Open;
 
      Result := not QryServicoCli.IsEmpty;
 

@@ -119,7 +119,6 @@ begin
 procedure TDtmClientes.DataModuleCreate(Sender: TObject);
 begin
   try
-
          Qrycliente.close;
          Qrycliente.SQL.Text:= 'select cliente,Nome,Endereco,Bairro,Cidade,UF,CEP,CGC,Fone,email from Cad_Clientes order by nome';
          Qrycliente.Open;

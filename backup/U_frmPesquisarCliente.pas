@@ -71,14 +71,14 @@ begin
 end;
 
 procedure Tfrmpesquisarcliente.DBGrid1TitleClick(Column: TColumn);
-var
-  lsFiltroSql: string;
 begin
-  lsFiltroSql := '';
   lblPesquisa.Caption := Column.Title.Caption;
   gsCampoPesq := Column.FieldName;
   pintaTituloGrid(Column.Title.Caption);
   lblPesquisa.Visible:= True;
+
+  //ordena a grade pelo titulo da coluna clicado
+  dtmClientes.Qrycliente.IndexFieldNames:= lblPesquisa.Caption + ' asc';
 end;
 
 procedure Tfrmpesquisarcliente.pintaTituloGrid(coluna: String);
@@ -89,10 +89,10 @@ begin
   begin
     if DBGrid1.Columns.Items[liCont].Title.Caption = coluna then
        DBGrid1.Columns.Items[liCont].Title.Font.Color := clBlue
-       //DBGrid1.Columns.Items[liCont].Title.Font.Style.fsBold = True;
+
     else
         DBGrid1.Columns.Items[liCont].Title.Font.Color := clBlack;
-      //DBGrid1.Columns.Items[liCont].Title.Font.Style.fsBold = False;
+
   end;
 end;
 

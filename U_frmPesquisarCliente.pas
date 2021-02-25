@@ -76,6 +76,9 @@ begin
   gsCampoPesq := Column.FieldName;
   pintaTituloGrid(Column.Title.Caption);
   lblPesquisa.Visible:= True;
+
+  //ordena a grade pelo titulo da coluna clicado
+  dtmClientes.Qrycliente.IndexFieldNames:= lblPesquisa.Caption + ' asc';
 end;
 
 procedure Tfrmpesquisarcliente.pintaTituloGrid(coluna: String);
