@@ -5,17 +5,18 @@ unit uClientes;
 interface
 
 uses
-  Classes, SysUtils, db, Forms, Controls, Graphics, Dialogs, DBGrids, StdCtrls,
+  Classes, SysUtils, DB, Forms, Controls, Graphics, Dialogs, DBGrids, StdCtrls,
   ExtCtrls, Buttons, DBCtrls, Grids;
 
 type
 
-
-
   { TFrmCliente }
 
   TFrmCliente = class(TForm)
+    BtnEditarCli: TButton;
     btnPesquisarCliente: TSpeedButton;
+    BtnSalvarCli: TButton;
+    BtnCancelarCli: TButton;
     DSDropFormaPagamentoCli: TDataSource;
     DBCBFormaPagamento: TDBComboBox;
     DBComboBox1: TDBComboBox;
@@ -27,30 +28,43 @@ type
     edtEndereco: TEdit;
     edtFone: TEdit;
     edtNome: TEdit;
+    EdtProCLi_Codigo: TEdit;
+    EdtProCLi_Descricao: TEdit;
+    EdtProCLi_Valor: TEdit;
     edtUF: TEdit;
     GroupBox1: TGroupBox;
     LBLBairro: TLabel;
     LBLCGC: TLabel;
     LBLCidade: TLabel;
     LBLCliente: TLabel;
+    lblcodigo: TLabel;
     LBLEdenreco: TLabel;
     LBLEmail: TLabel;
     LBLFone: TLabel;
     LBLFormaPagamento: TLabel;
     LBLNome: TLabel;
+    lblservicos: TLabel;
     LBLUf: TLabel;
+    lblValor: TLabel;
+    PnlCabecalho: TPanel;
     PClienteTop: TPanel;
     StringGrid1: TStringGrid;
 
-   procedure btnPesquisarClienteClick(Sender: TObject);
-   //procedure btntesteClick(Sender: TObject);
-   procedure FormCreate(Sender: TObject);
-   procedure FormDestroy(Sender: TObject);
+    procedure BtnCancelarCliClick(Sender: TObject);
+    procedure BtnEditarCliClick(Sender: TObject);
+    procedure btnPesquisarClienteClick(Sender: TObject);
+    procedure BtnSalvarCliClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+    procedure StringGrid1DblClick(Sender: TObject);
 
 
   private
 
-   procedure inicializandoStringGrid();
+    procedure inicializandoStringGrid();
+    procedure limparcampos();
+    procedure desabilitarcampos();
+    procedure habilitarcampos();
 
   public
 
@@ -76,6 +90,7 @@ procedure TFrmCliente.FormCreate(Sender: TObject);
 begin
   dtmClientes := TDtmClientes.Create(Self);
   inicializandoStringGrid;
+  desabilitarcampos();
 
 
   // fazer um if verificando se existe a tabela de cliente/produto se nao tiver criar
@@ -83,13 +98,15 @@ end;
 
 procedure TFrmCliente.btnPesquisarClienteClick(Sender: TObject);
 var
-  servcount : integer;
+  servcount: integer;
   lsFiltroSql: string;
 begin
   try
     lsFiltroSql := '';
+    desabilitarcampos();
     frmPesquisarCliente := TfrmPesquisarCliente.Create(Self);
     frmPesquisarCliente.ShowModal;
+    BtnEditarCli.Enabled:=true;
 
     edtNome.Text := dtmClientes.Qrycliente.FieldByName('nome').AsString;
     edtCliente.Text := dtmClientes.Qrycliente.FieldByName('cliente').AsString;
@@ -106,83 +123,129 @@ begin
     dtmClientes.carregaprodutocliente(lsFiltroSql);
 
     dtmClientes.QryServicoCli.FetchAll;
-    StringGrid1.RowCount:= dtmClientes.QryServicoCli.RecordCount + 1;
+    StringGrid1.RowCount := dtmClientes.QryServicoCli.RecordCount + 1;
 
-   for servcount := 1 to dtmClientes.QryServicoCli.RecordCount do
-   begin
-     StringGrid1.Cells[1,servcount] := dtmClientes.QryServicoCli.FieldByName('produto').AsString;
-     StringGrid1.Cells[2,servcount] := dtmClientes.QryServicoCli.FieldByName('descricao').AsString;
-     StringGrid1.Cells[3,servcount] := dtmClientes.QryServicoCli.FieldByName('valor').AsString;
+    for servcount := 1 to dtmClientes.QryServicoCli.RecordCount do
+    begin
+      StringGrid1.Cells[0, servcount] :=
+        dtmClientes.QryServicoCli.FieldByName('produto').AsString;
+      StringGrid1.Cells[1, servcount] :=
+        dtmClientes.QryServicoCli.FieldByName('descricao').AsString;
+      StringGrid1.Cells[2, servcount] :=
+        dtmClientes.QryServicoCli.FieldByName('valor').AsString;
 
 
-     dtmClientes.QryServicoCli.Next;
-   end;
+      dtmClientes.QryServicoCli.Next;
+    end;
 
 
-   finally
+  finally
     FreeAndNil(frmPesquisarCliente);
   end;
 end;
 
 
-{
-procedure TFrmCliente.btntesteClick(Sender: TObject);
-var servcount : integer;
+
+procedure TFrmCliente.BtnEditarCliClick(Sender: TObject);
 begin
-   dtmClientes.QryServicoCli.FetchAll;
-   StringGrid1.RowCount:= dtmClientes.QryServicoCli.RecordCount + 1;
-   for servcount := 1 to dtmClientes.QryServicoCli.RecordCount do
-   begin
-     StringGrid1.Cells[1,servcount] := dtmClientes.QryServicoCli.FieldByName('produto').AsString;
-     StringGrid1.Cells[2,servcount] := dtmClientes.QryServicoCli.FieldByName('descricao').AsString;
-     dtmClientes.QryServicoCli.Next;
-   end;
+
+       if Trim(EdtProCLi_Descricao.Text) = '' then
+       begin
+            ShowMessage('Selecione um produto!');
+       end
+          else
+          begin
+               habilitarcampos();
+          end;
 end;
-  }
 
-  {
-  USE [SingemSQL]
-GO
+procedure TFrmCliente.BtnSalvarCliClick(Sender: TObject);
+begin
+        ShowMessage('Salvo!');
+end;
 
-/****** Object:  Table [dbo].[Cli_servicoJF]    Script Date: 24/02/2021 01:33:56 ******/
-SET ANSI_NULLS ON
-GO
+procedure TFrmCliente.BtnCancelarCliClick(Sender: TObject);
+begin
+ limparcampos();
+ BtnEditarCli.Enabled:= false;
 
-SET QUOTED_IDENTIFIER ON
-GO
+end;
 
-SET ANSI_PADDING ON
-GO
-
-CREATE TABLE [dbo].[Cli_servicoJF](
-	[cliente] [varchar](50) NULL,
-	[produto] [varchar](50) NULL,
-	[valor] [float] NULL,
-	[descricaoserv] [varchar](50) NULL
-) ON [PRIMARY]
-
-GO
-
-SET ANSI_PADDING OFF
-GO
-  }
 
 procedure TFrmCliente.FormDestroy(Sender: TObject);
 begin
   FreeAndNil(dtmClientes);
 end;
 
+procedure TFrmCliente.StringGrid1DblClick(Sender: TObject);
+begin
+  EdtProCLi_Codigo.Caption := (StringGrid1.Cells[0, StringGrid1.Row]);
+  EdtProCLi_Descricao.Caption := (StringGrid1.Cells[1, StringGrid1.Row]);
+  EdtProCLi_Valor.Caption := (StringGrid1.Cells[2, StringGrid1.Row]);
+end;
+
 procedure TFrmCliente.inicializandoStringGrid();
 begin
   //nome das celulas do string grid
-   StringGrid1.ColCount := 4;
-   StringGrid1.RowCount := 1;
+  StringGrid1.ColCount := 3;
+  StringGrid1.RowCount := 1;
 
-   StringGrid1.Cells[0,0] := '';
-   StringGrid1.Cells[1,0] := 'Codigo';
-   StringGrid1.Cells[2,0] := 'Serviços';
-   StringGrid1.Cells[3,0] := 'Valor';
+  //StringGrid1.Cells[0,0] := '';
+  StringGrid1.Cells[0, 0] := 'Codigo';
+  StringGrid1.Cells[1, 0] := 'Serviços';
+  StringGrid1.Cells[2, 0] := 'Valor';
 end;
 
+procedure TFrmCliente.limparcampos();
+begin
+  edtNome.Text := '';
+  edtCliente.Text := '';
+  edtcgc.Text := '';
+  edtEndereco.Text := '';
+  edtBairro.Text := '';
+  edtcidade.Text := '';
+  edtuf.Text := '';
+  edtFone.Text := '';
+  edtEmail.Text := '';
+  EdtProCLi_Descricao.Text := '';
+  EdtProCLi_Codigo.Text := '';
+  EdtProCLi_Valor.Text := '';
+  EdtProCLi_Descricao.Enabled := False;
+  EdtProCLi_Valor.Enabled := False;
+  inicializandoStringGrid();
+  desabilitarcampos();
+
+end;
+
+procedure TFrmCliente.desabilitarcampos();
+begin
+  EdtProCLi_Codigo.Enabled := False;
+  EdtProCLi_Descricao.Enabled := False;
+  EdtProCLi_Valor.Enabled := False;
+  BtnEditarCli.Enabled:=False;
+  BtnSalvarCli.Enabled:=False;
+  BtnCancelarCli.Enabled:=False;
+
+  edtNome.Enabled := False;
+  edtCliente.Enabled := False;
+  edtcgc.Enabled := False;
+  edtEndereco.Enabled := False;
+  edtBairro.Enabled := False;
+  edtcidade.Enabled := False;
+  edtuf.Enabled := False;
+  edtFone.Enabled := False;
+  edtEmail.Enabled := False;
+
+end;
+
+procedure TFrmCliente.habilitarcampos();
+begin
+   EdtProCLi_Descricao.Enabled := True;
+   EdtProCLi_Valor.Enabled := True;
+   BtnSalvarCli.Enabled:= True;
+   BtnCancelarCli.Enabled:=True;
+
+end;
 
 end.
+

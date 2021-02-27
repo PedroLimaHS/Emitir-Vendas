@@ -1,7 +1,7 @@
 object frmpesquisarcliente: Tfrmpesquisarcliente
-  Left = 311
+  Left = 1387
   Height = 258
-  Top = 10
+  Top = 274
   Width = 813
   BorderIcons = []
   BorderStyle = bsSingle
@@ -10,7 +10,7 @@ object frmpesquisarcliente: Tfrmpesquisarcliente
   ClientWidth = 813
   OnCreate = FormCreate
   Position = poOwnerFormCenter
-  LCLVersion = '2.0.2.0'
+  LCLVersion = '2.0.10.0'
   object Panel1: TPanel
     Left = 0
     Height = 30
@@ -121,8 +121,9 @@ object frmpesquisarcliente: Tfrmpesquisarcliente
   object DBGrid1: TDBGrid
     Left = 0
     Height = 230
-    Top = 29
-    Width = 902
+    Top = 28
+    Width = 813
+    Align = alBottom
     Color = clNone
     Columns = <    
       item
@@ -152,7 +153,7 @@ object frmpesquisarcliente: Tfrmpesquisarcliente
       end    
       item
         Title.Font.Style = [fsBold]
-        Title.Caption = 'E-mail'
+        Title.Caption = 'Email'
         FieldName = 'Email'
       end>
     DataSource = dsCliente
@@ -171,6 +172,6 @@ object frmpesquisarcliente: Tfrmpesquisarcliente
     ParentFont = False
   end
   object dsCliente: TDataSource
-    left = 800
+    Left = 800
   end
 end
