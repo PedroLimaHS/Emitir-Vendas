@@ -1,14 +1,14 @@
 object FrmPrincipal: TFrmPrincipal
-  Left = 470
-  Height = 391
-  Top = 205
-  Width = 657
+  Left = 700
+  Height = 545
+  Top = 232
+  Width = 693
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Financeiro'
-  ClientHeight = 371
-  ClientWidth = 657
-  Color = 11089710
+  ClientHeight = 525
+  ClientWidth = 693
+  Color = clGray
   Menu = MainMenu1
   OnShow = FormShow
   Position = poScreenCenter
@@ -16,8 +16,8 @@ object FrmPrincipal: TFrmPrincipal
   object stb_Principal: TStatusBar
     Left = 0
     Height = 23
-    Top = 348
-    Width = 657
+    Top = 502
+    Width = 693
     Font.Color = clAppWorkspace
     Panels = <    
       item
@@ -30,12 +30,13 @@ object FrmPrincipal: TFrmPrincipal
     SimplePanel = False
   end
   object MainMenu1: TMainMenu
-    Left = 688
-    Top = 240
+    Left = 72
+    Top = 16
     object MenuItem1: TMenuItem
       Caption = 'Cadastros'
       object MenuItem3: TMenuItem
         Caption = 'Clientes'
+        ShortCut = 16451
         OnClick = MenuItem3Click
       end
     end
@@ -49,7 +50,7 @@ object FrmPrincipal: TFrmPrincipal
   end
   object Timer1: TTimer
     OnTimer = Timer1Timer
-    Left = 480
-    Top = 176
+    Left = 24
+    Top = 16
   end
 end

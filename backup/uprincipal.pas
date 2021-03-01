@@ -73,8 +73,6 @@ end;
 procedure TFrmPrincipal.MenuItem4Click(Sender: TObject);
 begin
 
-
-
   FiltroPesquisaCliente := TFiltroPesquisaCliente.Create(Self);
   try
     FiltroPesquisaCliente.ShowModal;

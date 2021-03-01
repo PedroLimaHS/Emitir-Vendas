@@ -5,7 +5,7 @@ unit U_DtmConexao;
 interface
 
 uses
-  Classes, SysUtils, ZConnection, DB, odbcconn, SQLDB,
+  Classes, SysUtils, ZConnection, ZDataset, DB, odbcconn, SQLDB,
   MSSQLConn, Forms;
 
 type
@@ -13,12 +13,17 @@ type
   { TDtmConexao }
 
   TDtmConexao = class(TDataModule)
+    TbProduto: TZTable;
+    Tbsplash: TZTable;
+    TbCliSerico: TZTable;
+    TbsplashRercursosHumanos: TStringField;
     zConexao: TZConnection;
     ZReadOnlyQuery1Bairro: TStringField;
     ZReadOnlyQuery1Cidade: TStringField;
     ZReadOnlyQuery1Endereco: TStringField;
     ZReadOnlyQuery1Nome: TStringField;
     ZReadOnlyQuery1UF: TStringField;
+    TbCliente: TZTable;
 
   private
 
@@ -42,6 +47,9 @@ function TDtmConexao.abreConexao: Boolean;
 begin
   try
     zConexao.Connected:= true;
+    zConexao.StartTransaction;
+
+
   except
     Application.MessageBox('Erro ao conectar com o banco de dados. Aplicação será finalizada!', 'Atenção');
     Application.Terminate;

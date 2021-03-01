@@ -1,19 +1,18 @@
 object DtmClientes: TDtmClientes
   OnCreate = DataModuleCreate
   OldCreateOrder = False
-  Height = 214
-  HorizontalOffset = 856
-  VerticalOffset = 123
-  Width = 298
-  PPI = 96
+  Height = 343
+  HorizontalOffset = 1429
+  VerticalOffset = 209
+  Width = 435
   object Qrycliente: TZReadOnlyQuery
     Connection = DtmConexao.zConexao
     SQL.Strings = (
       'select cliente,Nome,Endereco,Bairro,Cidade,UF,CEP,CGC,Fone,email from Cad_Clientes'
     )
     Params = <>
-    left = 24
-    top = 16
+    Left = 24
+    Top = 16
     object Qryclientenome: TStringField
       FieldKind = fkData
       FieldName = 'nome'
@@ -118,8 +117,8 @@ object DtmClientes: TDtmClientes
   object QryPsqCliente: TZReadOnlyQuery
     Connection = DtmConexao.zConexao
     Params = <>
-    left = 96
-    top = 16
+    Left = 96
+    Top = 16
     object Qryclientenome1: TStringField
       FieldKind = fkData
       FieldName = 'nome'
@@ -161,33 +160,18 @@ object DtmClientes: TDtmClientes
       Size = 120
     end
   end
-  object BufDataset1: TBufDataset
-    FieldDefs = <>
-    left = 24
-    top = 88
-  end
   object QryFormapagamento: TZReadOnlyQuery
     Connection = DtmConexao.zConexao
     SQL.Strings = (
       'select Faturador,Descricao from Cad_Faturadores'
     )
     Params = <>
-    left = 200
-    top = 16
-    object QryFormapagamentoFaturador: TStringField
-      FieldKind = fkData
-      FieldName = 'Faturador'
-      Index = 0
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = True
-      Required = False
-      Size = 8
-    end
+    Left = 200
+    Top = 16
     object QryFormapagamentoDescricao: TStringField
       FieldKind = fkData
       FieldName = 'Descricao'
-      Index = 1
+      Index = 0
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = True
@@ -198,10 +182,172 @@ object DtmClientes: TDtmClientes
   object QryServicoCli: TZReadOnlyQuery
     Connection = DtmConexao.zConexao
     SQL.Strings = (
-      'select Produto , Descricao  from Cad_Produtos WHERE Servico = ''t'''
+      ''
     )
     Params = <>
-    left = 96
-    top = 88
+    Left = 24
+    Top = 160
+  end
+  object QryServicoCli1: TZQuery
+    Connection = DtmConexao.zConexao
+    SQL.Strings = (
+      'select c.Cliente, c.Nome, c.Endereco,'
+      '                                 c.Bairro,'
+      '                                  c.Cidade,'
+      '                                  c.UF,'
+      '                                  c.CEP,'
+      '                                  c.CGC,'
+      '                                  c.Fone,        '
+      '                                  c.EMail,       '
+      '                                  jf.produto,    '
+      '                                  jf.valor, '
+      '                                  jf.descricaoserv,'
+      '                                  p.descricao'
+      '                                  from Cad_Clientes C                            '
+      '                                  inner join cli_servicojf as jf on jf.cliente = c.Cliente   '
+      '                                  inner join cad_produtos as P on jf.produto = p.produto '
+    )
+    Params = <>
+    Left = 24
+    Top = 232
+    object QryServicoCli1Cliente: TStringField
+      FieldKind = fkData
+      FieldName = 'Cliente'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 5
+    end
+    object QryServicoCli1Nome: TStringField
+      FieldKind = fkData
+      FieldName = 'Nome'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+    object QryServicoCli1Endereco: TStringField
+      FieldKind = fkData
+      FieldName = 'Endereco'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object QryServicoCli1Bairro: TStringField
+      FieldKind = fkData
+      FieldName = 'Bairro'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object QryServicoCli1Cidade: TStringField
+      FieldKind = fkData
+      FieldName = 'Cidade'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object QryServicoCli1UF: TStringField
+      FieldKind = fkData
+      FieldName = 'UF'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+    object QryServicoCli1CEP: TStringField
+      FieldKind = fkData
+      FieldName = 'CEP'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object QryServicoCli1CGC: TStringField
+      FieldKind = fkData
+      FieldName = 'CGC'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QryServicoCli1Fone: TStringField
+      FieldKind = fkData
+      FieldName = 'Fone'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object QryServicoCli1EMail: TStringField
+      FieldKind = fkData
+      FieldName = 'EMail'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+    object QryServicoCli1produto: TStringField
+      FieldKind = fkData
+      FieldName = 'produto'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+    object QryServicoCli1valor: TFloatField
+      FieldKind = fkData
+      FieldName = 'valor'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 8
+    end
+    object QryServicoCli1descricaoserv: TStringField
+      FieldKind = fkData
+      FieldName = 'descricaoserv'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+    object QryServicoCli1descricao: TStringField
+      FieldKind = fkData
+      FieldName = 'descricao'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
   end
 end

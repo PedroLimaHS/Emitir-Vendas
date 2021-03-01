@@ -1,13 +1,13 @@
 object FrmCliente: TFrmCliente
-  Left = 1266
+  Left = 1673
   Height = 455
-  Top = 234
-  Width = 693
+  Top = 142
+  Width = 691
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Cadastro clientes'
   ClientHeight = 455
-  ClientWidth = 693
+  ClientWidth = 691
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   Position = poOwnerFormCenter
@@ -16,7 +16,7 @@ object FrmCliente: TFrmCliente
     Left = 0
     Height = 147
     Top = 308
-    Width = 693
+    Width = 691
     Align = alBottom
     ColCount = 3
     DefaultColWidth = 64
@@ -226,7 +226,7 @@ object FrmCliente: TFrmCliente
     end
   end
   object GroupBox1: TGroupBox
-    Left = -1
+    Left = 0
     Height = 99
     Top = 208
     Width = 694
@@ -279,6 +279,15 @@ object FrmCliente: TFrmCliente
       Width = 26
       Caption = 'Valor'
       ParentColor = False
+    end
+    object BtnSalvarServico: TButton
+      Left = 280
+      Height = 25
+      Top = 0
+      Width = 75
+      Caption = 'Salvar'
+      OnClick = BtnSalvarServicoClick
+      TabOrder = 3
     end
   end
   object PnlCabecalho: TPanel
@@ -407,6 +416,7 @@ object FrmCliente: TFrmCliente
   end
   object DSDropFormaPagamentoCli: TDataSource
     DataSet = DtmClientes.QryFormapagamento
+    OnDataChange = DSDropFormaPagamentoCliDataChange
     Left = 520
     Top = 8
   end

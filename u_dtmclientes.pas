@@ -5,14 +5,14 @@ unit U_DtmClientes;
 interface
 
 uses
-  Classes, SysUtils, ZDataset, Dialogs,db, BufDataset,U_Cliente, uClientes;
+  Classes, SysUtils, ZDataset, ZSqlUpdate, Dialogs, db, BufDataset, U_Cliente,
+  uClientes, SQLDB,U_DtmConexao;
 
 type
 
   { TDtmClientes }
 
   TDtmClientes = class(TDataModule)
-    BufDataset1: TBufDataset;
     Qrycliente: TZReadOnlyQuery;
     QryclienteBairro: TStringField;
     QryclienteCEP: TStringField;
@@ -21,7 +21,6 @@ type
     QryclienteEndereco: TStringField;
     QryclienteUF: TStringField;
     QryFormapagamentoDescricao: TStringField;
-    QryFormapagamentoFaturador: TStringField;
     QryPsqCliente: TZReadOnlyQuery;
     Qryclientecgc: TStringField;
     Qryclientecgc1: TStringField;
@@ -33,8 +32,24 @@ type
     Qryclientenome1: TStringField;
     QryFormapagamento: TZReadOnlyQuery;
     QryServicoCli: TZReadOnlyQuery;
+    QryServicoCli1: TZQuery;
+    QryServicoCli1Bairro: TStringField;
+    QryServicoCli1CEP: TStringField;
+    QryServicoCli1CGC: TStringField;
+    QryServicoCli1Cidade: TStringField;
+    QryServicoCli1Cliente: TStringField;
+    QryServicoCli1descricao: TStringField;
+    QryServicoCli1descricaoserv: TStringField;
+    QryServicoCli1EMail: TStringField;
+    QryServicoCli1Endereco: TStringField;
+    QryServicoCli1Fone: TStringField;
+    QryServicoCli1Nome: TStringField;
+    QryServicoCli1produto: TStringField;
+    QryServicoCli1UF: TStringField;
+    QryServicoCli1valor: TFloatField;
     procedure DataModuleCreate(Sender: TObject);
     function carregaprodutocliente(strFiltroSql:String):boolean;
+    function updateprodutocliente(strFilCliSql: String;strFilValSql: String;strFilDescSql: String;strFilProdSql: String): boolean;
 
   private
 
@@ -93,10 +108,10 @@ begin
         Cliente.email:= Qrycliente.ParamByName('email').AsString;
       end;
 
-      cliente.nome:= Qrycliente.FieldByName('nome').AsString;
-      cliente.cliente:= Qrycliente.FieldByName('cliente').AsString;
-      cliente.cgc:= Qrycliente.FieldByName('cgc').AsString;
-      cliente.endereco:= Qrycliente.FieldByName('endereco').AsString;
+      Cliente.nome:= Qrycliente.FieldByName('nome').AsString;
+      Cliente.cliente:= Qrycliente.FieldByName('cliente').AsString;
+      Cliente.cgc:= Qrycliente.FieldByName('cgc').AsString;
+      Cliente.endereco:= Qrycliente.FieldByName('endereco').AsString;
       Cliente.bairro:= Qrycliente.FieldByName('bairro').AsString;
       Cliente.uf:= Qrycliente.FieldByName('uf').AsString;
       Cliente.cep:= Qrycliente.FieldByName('cep').AsString;
@@ -135,25 +150,26 @@ function TDtmClientes.carregaprodutocliente(strFiltroSql: String): boolean;
  begin
   try
          QryServicoCli.close;
-         QryServicoCli.SQL.Text:= 'select         '#13 +
-                                  'c.Cliente,     '#13 +
-                                  'c.Nome,        '#13 +
-                                  'c.Endereco,    '#13 +
-                                  'c.Bairro,      '#13 +
-                                  'c.Cidade,      '#13 +
-                                  'c.UF,          '#13 +
-                                  'c.CEP,         '#13 +
-                                  'c.CGC,         '#13 +
-                                  'c.Fone,        '#13 +
-                                  'c.EMail,       '#13 +
-                                  'jf.produto,    '#13 +
-                                  'jf.valor,      '#13 +
-                                  'p.Descricao from Cad_Clientes C                            '#13 +
+         QryServicoCli.SQL.Text:= 'select              '#13 +
+                                  'c.Cliente,          '#13 +
+                                  'c.Nome,             '#13 +
+                                  'c.Endereco,         '#13 +
+                                  'c.Bairro,           '#13 +
+                                  'c.Cidade,           '#13 +
+                                  'c.UF,               '#13 +
+                                  'c.CEP,              '#13 +
+                                  'c.CGC,              '#13 +
+                                  'c.Fone,             '#13 +
+                                  'c.EMail,            '#13 +
+                                  'jf.produto,         '#13 +
+                                  'jf.valor,           '#13 +
+                                  'jf.descricaoserv,   '#13 +
+                                  'p.descricao from Cad_Clientes C                            '#13 +
                                   'inner join cli_servicojf as jf on jf.cliente = c.Cliente   '#13 +
                                   'inner join cad_produtos as P on jf.produto = p.produto     '#13 +
                                   'WHERE C.cliente =                                          '#13 +
                                    strFiltroSql +#13;
-                  QryServicoCli.Open;
+                   QryServicoCli.Open;
      Result := not QryServicoCli.IsEmpty;
 
    Except
@@ -167,6 +183,36 @@ function TDtmClientes.carregaprodutocliente(strFiltroSql: String): boolean;
   end;
 end;
 
+function TDtmClientes.updateprodutocliente(strFilCliSql: String;strFilValSql: String;strFilDescSql: String;strFilProdSql: String): boolean;
+ begin
+  try
+         QryServicoCli1.close;
+         QryServicoCli1.SQL.Text:= '  UPDATE                          '#13 +
+                                   'cli_servicojf SET                 '#13 +
+                                   'valor = :valor,                   '#13 +
+                                   'descricaoserv = :descricaoserv    '#13 +
+                                   'WHERE cliente = :cliente          '#13 +
+                                   'and produto= :produto';
+
+                   QryServicoCli1.ParamByName('Cliente').AsString:= strFilCliSql;
+                   QryServicoCli1.ParamByName('valor').AsString:= strFilValSql;
+                   QryServicoCli1.ParamByName('descricaoserv').AsString:= strFilDescSql;
+                   QryServicoCli1.ParamByName('produto').AsString:= strFilProdSql;
+                   QryServicoCli1.ExecSQL;
+                   Result := not QryServicoCli1.IsEmpty;
+
+   Except
+    on E:Exception do
+    begin
+         ShowMessage('Erro ao abrir tabela produtosservicos.'+#13+
+         'Erro: ' + e.Message);
+       Result := false
+
+    end;
+  end;
+end;
+
 end.
+
 
 

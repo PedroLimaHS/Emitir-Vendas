@@ -17,6 +17,7 @@ type
     btnPesquisarCliente: TSpeedButton;
     BtnSalvarCli: TButton;
     BtnCancelarCli: TButton;
+    BtnSalvarServico: TButton;
     DSDropFormaPagamentoCli: TDataSource;
     DBCBFormaPagamento: TDBComboBox;
     DBComboBox1: TDBComboBox;
@@ -54,10 +55,11 @@ type
     procedure BtnEditarCliClick(Sender: TObject);
     procedure btnPesquisarClienteClick(Sender: TObject);
     procedure BtnSalvarCliClick(Sender: TObject);
+    procedure BtnSalvarServicoClick(Sender: TObject);
+    procedure DSDropFormaPagamentoCliDataChange(Sender: TObject; Field: TField);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure StringGrid1DblClick(Sender: TObject);
-
 
   private
 
@@ -65,6 +67,7 @@ type
     procedure limparcampos();
     procedure desabilitarcampos();
     procedure habilitarcampos();
+    procedure Preencerstringgrid();
 
   public
 
@@ -98,7 +101,7 @@ end;
 
 procedure TFrmCliente.btnPesquisarClienteClick(Sender: TObject);
 var
-  servcount: integer;
+
   lsFiltroSql: string;
 begin
   try
@@ -122,24 +125,9 @@ begin
 
     dtmClientes.carregaprodutocliente(lsFiltroSql);
 
-    dtmClientes.QryServicoCli.FetchAll;
-    StringGrid1.RowCount := dtmClientes.QryServicoCli.RecordCount + 1;
+    Preencerstringgrid();
 
-    for servcount := 1 to dtmClientes.QryServicoCli.RecordCount do
-    begin
-      StringGrid1.Cells[0, servcount] :=
-        dtmClientes.QryServicoCli.FieldByName('produto').AsString;
-      StringGrid1.Cells[1, servcount] :=
-        dtmClientes.QryServicoCli.FieldByName('descricao').AsString;
-      StringGrid1.Cells[2, servcount] :=
-        dtmClientes.QryServicoCli.FieldByName('valor').AsString;
-
-
-      dtmClientes.QryServicoCli.Next;
-    end;
-
-
-  finally
+   finally
     FreeAndNil(frmPesquisarCliente);
   end;
 end;
@@ -162,6 +150,34 @@ end;
 procedure TFrmCliente.BtnSalvarCliClick(Sender: TObject);
 begin
         ShowMessage('Salvo!');
+end;
+
+procedure TFrmCliente.BtnSalvarServicoClick(Sender: TObject);
+var
+  lsFilCliSql: String;
+  lsFilValSql: String;
+  lsFilDescSql: String;
+  lsFilProdSql: String;
+
+begin
+  lsFilCliSql:='';
+  lsFilValSql:='';
+  lsFilDescSql:='';
+  lsFilProdSql:='';
+
+  lsFilCliSql := lsFilCliSql + QuotedStr(edtCliente.Text);
+  lsFilValSql := lsFilValSql + QuotedStr(EdtProCLi_Valor.Text);
+  lsFilDescSql := lsFilDescSql + QuotedStr(EdtProCLi_Descricao.Text);
+  lsFilProdSql := lsFilProdSql + QuotedStr(EdtProCLi_Codigo.Text);
+
+  dtmClientes.updateprodutocliente(lsFilCliSql ,lsFilValSql, lsFilDescSql, lsFilProdSql);
+
+end;
+
+procedure TFrmCliente.DSDropFormaPagamentoCliDataChange(Sender: TObject;
+  Field: TField);
+begin
+
 end;
 
 procedure TFrmCliente.BtnCancelarCliClick(Sender: TObject);
@@ -247,5 +263,27 @@ begin
 
 end;
 
+ procedure TFrmCliente.Preencerstringgrid();
+ var
+  servcount: integer;
+ begin
+    dtmClientes.QryServicoCli.FetchAll;
+    StringGrid1.RowCount := dtmClientes.QryServicoCli.RecordCount + 1;
+
+    for servcount := 1 to dtmClientes.QryServicoCli.RecordCount do
+    begin
+      StringGrid1.Cells[0, servcount] :=
+                           dtmClientes.QryServicoCli.FieldByName('produto').AsString;
+      StringGrid1.Cells[1, servcount] :=
+                           dtmClientes.QryServicoCli.FieldByName('descricaoserv').AsString;
+      StringGrid1.Cells[2, servcount] :=
+                           dtmClientes.QryServicoCli.FieldByName('valor').AsString;
+
+
+      dtmClientes.QryServicoCli.Next;
+    end;
+ end;
+
 end.
+
 
