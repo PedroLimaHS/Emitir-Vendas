@@ -1,8 +1,8 @@
 object DtmConexao: TDtmConexao
   OldCreateOrder = False
   Height = 409
-  HorizontalOffset = 751
-  VerticalOffset = 223
+  HorizontalOffset = 639
+  VerticalOffset = 219
   Width = 488
   object zConexao: TZConnection
     ControlsCodePage = cCP_UTF8
@@ -12,6 +12,7 @@ object DtmConexao: TDtmConexao
       'AutoEncodeStrings=True'
       'controls_cp=CP_UTF8'
     )
+    AutoCommit = False
     Connected = True
     HostName = 'localhost'
     Port = 1433
@@ -20,29 +21,5 @@ object DtmConexao: TDtmConexao
     Protocol = 'ado'
     Left = 200
     Top = 8
-  end
-  object TbProduto: TZTable
-    Connection = zConexao
-    TableName = 'SingemSQL.dbo.Cad_Produtos'
-    Left = 272
-    Top = 64
-  end
-  object TbCliente: TZTable
-    Connection = zConexao
-    TableName = 'SingemSQL.dbo.Cad_Clientes'
-    Left = 200
-    Top = 64
-  end
-  object TbCliSerico: TZTable
-    Connection = zConexao
-    TableName = 'SingemSQL.dbo.Cli_servicoJF'
-    Left = 48
-    Top = 64
-  end
-  object Tbsplash: TZTable
-    Connection = zConexao
-    TableName = 'SingemSQL.dbo.Splash'
-    Left = 120
-    Top = 64
   end
 end

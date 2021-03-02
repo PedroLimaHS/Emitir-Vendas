@@ -13,9 +13,6 @@ type
   { TDtmConexao }
 
   TDtmConexao = class(TDataModule)
-    TbProduto: TZTable;
-    Tbsplash: TZTable;
-    TbCliSerico: TZTable;
     TbsplashRercursosHumanos: TStringField;
     zConexao: TZConnection;
     ZReadOnlyQuery1Bairro: TStringField;
@@ -23,7 +20,6 @@ type
     ZReadOnlyQuery1Endereco: TStringField;
     ZReadOnlyQuery1Nome: TStringField;
     ZReadOnlyQuery1UF: TStringField;
-    TbCliente: TZTable;
 
   private
 
@@ -47,7 +43,6 @@ function TDtmConexao.abreConexao: Boolean;
 begin
   try
     zConexao.Connected:= true;
-    zConexao.StartTransaction;
 
 
   except

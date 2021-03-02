@@ -47,7 +47,6 @@ function TDtmConexao.abreConexao: Boolean;
 begin
   try
     zConexao.Connected:= true;
-    zConexao.StartTransaction;
 
 
   except

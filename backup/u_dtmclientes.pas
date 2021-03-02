@@ -49,7 +49,7 @@ type
     QryServicoCli1valor: TFloatField;
     procedure DataModuleCreate(Sender: TObject);
     function carregaprodutocliente(strFiltroSql:String):boolean;
-    function updateprodutocliente(strFilCliSql: String;strFilValSql: String;strFilDescSql: String;strFilProdSql: String): boolean;
+    function updateprodutocliente(CodCliente: String;Valor: String;DescricaoServ: String;Produto: String): boolean;
 
   private
 
@@ -183,31 +183,59 @@ function TDtmClientes.carregaprodutocliente(strFiltroSql: String): boolean;
   end;
 end;
 
-function TDtmClientes.updateprodutocliente(strFilCliSql: String;strFilValSql: String;strFilDescSql: String;strFilProdSql: String): boolean;
- begin
+function TDtmClientes.updateprodutocliente(CodCliente: String;Valor: String;DescricaoServ: String;Produto: String): boolean;
+var
+  cont: Integer;
+begin
   try
+    with QryServicoCli1 do
+    begin
+      Close;
+      SQL.Clear;
+      SQL.Add('UPDATE CLI_SERVICOJF SET VALOR = :VALOR, DESCRICAOSERV = :DESCRICAOSERV');
+      SQL.Add('WHERE CLIENTE = :CLIENTE AND PRODUTO = :PRODUTO');
+      ParamByName('VALOR').AsString := Valor;
+      ParamByName('DESCRICAOSERV').AsString := DescricaoServ;
+      ParamByName('CLIENTE').AsString := CodCliente;
+      ParamByName('PRODUTO').AsString := Produto;
+      ExecSQL;
+      ApplyUpdates;
+      cont:= RowsAffected;
+      Connection.Commit;
+    end;
+    if cont >= 1 then
+    begin
+    ShowMessage('ta salvo' + IntToStr(cont));
+    carregaprodutocliente(CodCliente)
+    end;
+
+(*
          QryServicoCli1.close;
+         QryServicoCli1.SQL.Clear;
          QryServicoCli1.SQL.Text:= '  UPDATE                          '#13 +
                                    'cli_servicojf SET                 '#13 +
                                    'valor = :valor,                   '#13 +
                                    'descricaoserv = :descricaoserv    '#13 +
-                                   'WHERE cliente = :cliente          '#13 +
-                                   'and produto= :produto';
+                                   'WHERE cliente = ''00004''          '#13 +
+                                   'and produto= ''S/B''';
 
-                   QryServicoCli1.ParamByName('Cliente').AsString:= strFilCliSql;
-                   QryServicoCli1.ParamByName('valor').AsString:= strFilValSql;
-                   QryServicoCli1.ParamByName('descricaoserv').AsString:= strFilDescSql;
-                   QryServicoCli1.ParamByName('produto').AsString:= strFilProdSql;
+                   //QryServicoCli1.ParamByName('Cliente').AsString:= CodCliente;
+                   QryServicoCli1.ParamByName('valor').AsString:= Valor;
+                   QryServicoCli1.ParamByName('descricaoserv').AsString:= DescricaoServ;
+                   //QryServicoCli1.ParamByName('produto').AsString:= Produto;
                    QryServicoCli1.ExecSQL;
-                   //Result := not QryServicoCli1.IsEmpty;
+                   QryServicoCli1.ApplyUpdates;
 
-   Except
+                   DtmConexao.zConexao.Commit;
+
+                   Result := not QryServicoCli1.IsEmpty;
+*)
+  Except
     on E:Exception do
     begin
-         ShowMessage('Erro ao abrir tabela produtosservicos.'+#13+
+      ShowMessage('Erro ao abrir tabela produtosservicos.'+#13+
          'Erro: ' + e.Message);
        Result := false
-
     end;
   end;
 end;

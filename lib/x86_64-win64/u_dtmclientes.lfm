@@ -2,8 +2,8 @@ object DtmClientes: TDtmClientes
   OnCreate = DataModuleCreate
   OldCreateOrder = False
   Height = 343
-  HorizontalOffset = 1429
-  VerticalOffset = 209
+  HorizontalOffset = 1273
+  VerticalOffset = 240
   Width = 435
   object Qrycliente: TZReadOnlyQuery
     Connection = DtmConexao.zConexao
