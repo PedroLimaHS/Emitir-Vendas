@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, DBGrids, Menus,
-  ExtCtrls, Buttons, StdCtrls, ComCtrls, U_Util, u_RelatorioClientes;
+  ExtCtrls, Buttons, StdCtrls, ComCtrls, U_Util,u_frmDistribuicaoCli;
 
 type
 
@@ -18,11 +18,14 @@ type
     MenuItem2: TMenuItem;
     MenuItem3: TMenuItem;
     MenuItem4: TMenuItem;
+    MenuItem5: TMenuItem;
+    MenuItem6: TMenuItem;
     stb_Principal: TStatusBar;
     Timer1: TTimer;
     procedure FormShow(Sender: TObject);
     procedure MenuItem3Click(Sender: TObject);
     procedure MenuItem4Click(Sender: TObject);
+    procedure MenuItem6Click(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
 
@@ -79,6 +82,16 @@ begin
 
   finally
     FreeAndNil(FiltroPesquisaCliente);
+  end;
+end;
+
+procedure TFrmPrincipal.MenuItem6Click(Sender: TObject);
+begin
+  try
+     := TFrmCliente.Create(Self);
+    FrmCliente.ShowModal;
+  finally
+    FreeAndNil(FrmCliente);
   end;
 end;
 

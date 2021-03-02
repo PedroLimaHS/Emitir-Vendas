@@ -20,6 +20,7 @@ type
     cgc: String;
     fone: String;
     email: String;
+    bloqueio: String;
 
 
 

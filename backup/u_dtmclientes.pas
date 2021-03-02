@@ -15,6 +15,7 @@ type
   TDtmClientes = class(TDataModule)
     Qrycliente: TZReadOnlyQuery;
     QryclienteBairro: TStringField;
+    QryclienteBloqueio: TStringField;
     QryclienteCEP: TStringField;
     Qryclientecliente: TStringField;
     Qryclienteemail: TStringField;
@@ -68,7 +69,7 @@ implementation
 
 { TDtmClientes }
 
-function TDtmClientes.getCliente(PCliente:string):Tcliente;
+(*function TDtmClientes.getCliente(PCliente:string):Tcliente;
 var
   Cliente :Tcliente;
 
@@ -85,7 +86,8 @@ begin
                              '   cep,          '#13 +
                              '   fone,         '#13 +
                              '   email,        '#13 +
-                             '   cgc           '#13 +
+                             '   cgc,          '#13 +
+                             '   BLOQUEIO      '#13 +
                              '   from cad_clientes where cliente = :Cliente';
 
        Qrycliente.ParamByName('Cliente').AsString:= PCliente;
@@ -106,6 +108,7 @@ begin
         Cliente.cidade:= Qrycliente.ParamByName('cidade').AsString;
         Cliente.fone:= Qrycliente.ParamByName('fone').AsString;
         Cliente.email:= Qrycliente.ParamByName('email').AsString;
+        Cliente.bloqueio:= Qrycliente.ParamByName('blqoueio').AsString;
       end;
 
       Cliente.nome:= Qrycliente.FieldByName('nome').AsString;
@@ -118,6 +121,7 @@ begin
       Cliente.cidade:= Qrycliente.FieldByName('cidade').AsString;
       Cliente.fone:= Qrycliente.FieldByName('fone').AsString;
       Cliente.email:= Qrycliente.FieldByName('email').AsString;
+      Cliente.bloqueio:= Qrycliente.FieldByName('bloqueio').AsString;
       except
        on E:exception do
       begin
@@ -126,13 +130,13 @@ begin
          'Erro: ' + e.Message);
        end;
      end;
-   end;
+   end; *)
 
 procedure TDtmClientes.DataModuleCreate(Sender: TObject);
 begin
   try
          Qrycliente.close;
-         Qrycliente.SQL.Text:= 'select cliente,Nome,Endereco,Bairro,Cidade,UF,CEP,CGC,Fone,email from Cad_Clientes';
+         Qrycliente.SQL.Text:= 'select cliente,Nome,Endereco,Bairro,Cidade,UF,CEP,CGC,Fone,email,bloqueio from Cad_Clientes';
          Qrycliente.Open;
 
       except
@@ -206,7 +210,7 @@ begin
     if cont >= 1 then
     begin
     ShowMessage('ta salvo' + IntToStr(cont));
-    carregaprodutocliente(CodCliente)
+
     end;
 
 (*

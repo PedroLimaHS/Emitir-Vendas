@@ -203,7 +203,7 @@ end;
 
 procedure TFrmCliente.limparcampos();
 begin
-  edtNome.Text := '';
+  edtNome.Text := '';                    relatório >imoveis >gerais >ok >imprimir
   edtCliente.Text := '';
   edtcgc.Text := '';
   edtEndereco.Text := '';

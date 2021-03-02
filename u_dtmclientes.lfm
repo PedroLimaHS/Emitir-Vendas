@@ -2,17 +2,18 @@ object DtmClientes: TDtmClientes
   OnCreate = DataModuleCreate
   OldCreateOrder = False
   Height = 343
-  HorizontalOffset = 1273
-  VerticalOffset = 240
+  HorizontalOffset = 850
+  VerticalOffset = 216
   Width = 435
+  PPI = 96
   object Qrycliente: TZReadOnlyQuery
     Connection = DtmConexao.zConexao
     SQL.Strings = (
-      'select cliente,Nome,Endereco,Bairro,Cidade,UF,CEP,CGC,Fone,email from Cad_Clientes'
+      'select cliente,Nome,Endereco,Bairro,Cidade,UF,CEP,CGC,Fone,email,Bloqueio  from Cad_Clientes'
     )
     Params = <>
-    Left = 24
-    Top = 16
+    left = 24
+    top = 16
     object Qryclientenome: TStringField
       FieldKind = fkData
       FieldName = 'nome'
@@ -113,12 +114,22 @@ object DtmClientes: TDtmClientes
       Required = False
       Size = 50
     end
+    object QryclienteBloqueio: TStringField
+      FieldKind = fkData
+      FieldName = 'Bloqueio'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 4
+    end
   end
   object QryPsqCliente: TZReadOnlyQuery
     Connection = DtmConexao.zConexao
     Params = <>
-    Left = 96
-    Top = 16
+    left = 96
+    top = 16
     object Qryclientenome1: TStringField
       FieldKind = fkData
       FieldName = 'nome'
@@ -166,8 +177,8 @@ object DtmClientes: TDtmClientes
       'select Faturador,Descricao from Cad_Faturadores'
     )
     Params = <>
-    Left = 200
-    Top = 16
+    left = 200
+    top = 16
     object QryFormapagamentoDescricao: TStringField
       FieldKind = fkData
       FieldName = 'Descricao'
@@ -185,8 +196,8 @@ object DtmClientes: TDtmClientes
       ''
     )
     Params = <>
-    Left = 24
-    Top = 160
+    left = 24
+    top = 160
   end
   object QryServicoCli1: TZQuery
     Connection = DtmConexao.zConexao
@@ -208,8 +219,8 @@ object DtmClientes: TDtmClientes
       '                                  inner join cad_produtos as P on jf.produto = p.produto '
     )
     Params = <>
-    Left = 24
-    Top = 232
+    left = 24
+    top = 232
     object QryServicoCli1Cliente: TStringField
       FieldKind = fkData
       FieldName = 'Cliente'
@@ -327,6 +338,8 @@ object DtmClientes: TDtmClientes
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
+      MaxValue = 0
+      MinValue = 0
       Precision = 8
     end
     object QryServicoCli1descricaoserv: TStringField

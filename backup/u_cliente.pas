@@ -14,12 +14,16 @@ type
     endereco: String;
     bairro: String;
     cidade: String;
-    up: String;
+    uf: String;
     cep: String;
     inscricao: String;
     cgc: String;
     fone: String;
     email: String;
+
+
+
+
 
   end;
 

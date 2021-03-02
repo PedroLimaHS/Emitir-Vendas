@@ -59,11 +59,9 @@ end;
 
 procedure Tfrmpesquisarcliente.btnListarClick(Sender: TObject);
 begin
-
   FiltroPesquisaCliente := TFiltroPesquisaCliente.Create(Self);
   try
     FiltroPesquisaCliente.ShowModal;
-
   finally
     FreeAndNil(FiltroPesquisaCliente);
   end;

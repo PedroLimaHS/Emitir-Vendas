@@ -1,13 +1,13 @@
 object frmpesquisarcliente: Tfrmpesquisarcliente
-  Left = 311
-  Height = 258
-  Top = 10
-  Width = 813
+  Left = 448
+  Height = 266
+  Top = 281
+  Width = 858
   BorderIcons = []
   BorderStyle = bsSingle
   Caption = 'Pesquisar Clientes'
-  ClientHeight = 258
-  ClientWidth = 813
+  ClientHeight = 266
+  ClientWidth = 858
   OnCreate = FormCreate
   Position = poOwnerFormCenter
   LCLVersion = '2.0.2.0'
@@ -15,13 +15,13 @@ object frmpesquisarcliente: Tfrmpesquisarcliente
     Left = 0
     Height = 30
     Top = 0
-    Width = 813
+    Width = 858
     Align = alTop
     ClientHeight = 30
-    ClientWidth = 813
+    ClientWidth = 858
     TabOrder = 0
     object btnSair: TSpeedButton
-      Left = 779
+      Left = 824
       Height = 28
       Hint = 'Sair'
       Top = 1
@@ -121,15 +121,16 @@ object frmpesquisarcliente: Tfrmpesquisarcliente
   object DBGrid1: TDBGrid
     Left = 0
     Height = 230
-    Top = 29
-    Width = 902
+    Top = 36
+    Width = 858
+    Align = alBottom
     Color = clNone
     Columns = <    
       item
         MaxSize = 50
         Title.Font.Style = [fsBold]
         Title.Caption = 'Nome'
-        Width = 350
+        Width = 250
         FieldName = 'Nome'
       end    
       item
@@ -152,7 +153,8 @@ object frmpesquisarcliente: Tfrmpesquisarcliente
       end    
       item
         Title.Font.Style = [fsBold]
-        Title.Caption = 'E-mail'
+        Title.Caption = 'Email'
+        Width = 200
         FieldName = 'Email'
       end>
     DataSource = dsCliente

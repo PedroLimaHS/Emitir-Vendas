@@ -1,0 +1,58 @@
+object FrmDistribuicaoCLi: TFrmDistribuicaoCLi
+  Left = 484
+  Height = 581
+  Top = 116
+  Width = 685
+  Caption = 'FrmDistribuicaoCLi'
+  ClientHeight = 581
+  ClientWidth = 685
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  LCLVersion = '2.0.2.0'
+  object GroupBox1: TGroupBox
+    Left = 8
+    Height = 113
+    Top = 0
+    Width = 593
+    Caption = 'GroupBox1'
+    TabOrder = 0
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 204
+    Top = 377
+    Width = 681
+    Color = clWindow
+    Columns = <    
+      item
+        ButtonStyle = cbsCheckboxColumn
+        Title.Caption = 'Bloqueio'
+        ValueChecked = 'T'
+        ValueUnchecked = 'F'
+        FieldName = 'Bloqueio'
+      end    
+      item
+        Title.Caption = 'nome'
+        Width = 300
+        FieldName = 'nome'
+      end    
+      item
+        Title.Caption = 'cgc'
+        Width = 120
+        FieldName = 'cgc'
+      end    
+      item
+        Title.Caption = 'cidade'
+        Width = 155
+        FieldName = 'cidade'
+      end>
+    DataSource = dsCliente
+    TabOrder = 1
+  end
+  object dsCliente: TDataSource
+    DataSet = DtmClientes.Qrycliente
+    left = 544
+    top = 320
+  end
+end

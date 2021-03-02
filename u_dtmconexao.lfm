@@ -4,6 +4,7 @@ object DtmConexao: TDtmConexao
   HorizontalOffset = 639
   VerticalOffset = 219
   Width = 488
+  PPI = 96
   object zConexao: TZConnection
     ControlsCodePage = cCP_UTF8
     AutoEncodeStrings = True
@@ -16,10 +17,10 @@ object DtmConexao: TDtmConexao
     Connected = True
     HostName = 'localhost'
     Port = 1433
-    Database = 'Provider=SQLOLEDB.1;Password='''';Persist Security Info=True;User ID=''sa'';Initial Catalog=''SingemSQL'';Data Source=''localhost\SQLEXPRESS1'''
+    Database = 'Provider=SQLOLEDB.1;Password='''';Persist Security Info=True;User ID=''sa'';Initial Catalog=''SingemSQL'';Data Source=''localhost\SQLEXPRESS'''
     User = 'sa'
     Protocol = 'ado'
-    Left = 200
-    Top = 8
+    left = 200
+    top = 8
   end
 end
