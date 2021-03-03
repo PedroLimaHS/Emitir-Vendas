@@ -187,6 +187,8 @@ function TDtmClientes.carregaprodutocliente(strFiltroSql: String): boolean;
   end;
 end;
 
+
+
 function TDtmClientes.updateprodutocliente(CodCliente: String;Valor: String;DescricaoServ: String;Produto: String): boolean;
 var
   cont: Integer;
@@ -243,6 +245,7 @@ begin
     end;
   end;
 end;
+
 
 end.
 

@@ -55,7 +55,7 @@ type
   private
 
   public
-    function getCliente(PCliente: String):Tcliente;
+    //function getCliente(PCliente: String):Tcliente;
 
   end;
 
@@ -187,6 +187,11 @@ function TDtmClientes.carregaprodutocliente(strFiltroSql: String): boolean;
   end;
 end;
 
+procedure TDtmClientes.maxchave(Sender: TObject);
+begin
+
+end;
+
 function TDtmClientes.updateprodutocliente(CodCliente: String;Valor: String;DescricaoServ: String;Produto: String): boolean;
 var
   cont: Integer;
@@ -243,6 +248,7 @@ begin
     end;
   end;
 end;
+
 
 end.
 

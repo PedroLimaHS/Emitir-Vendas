@@ -2,8 +2,8 @@ object DtmClientes: TDtmClientes
   OnCreate = DataModuleCreate
   OldCreateOrder = False
   Height = 343
-  HorizontalOffset = 850
-  VerticalOffset = 216
+  HorizontalOffset = 891
+  VerticalOffset = 65
   Width = 435
   PPI = 96
   object Qrycliente: TZReadOnlyQuery
@@ -197,7 +197,7 @@ object DtmClientes: TDtmClientes
     )
     Params = <>
     left = 24
-    top = 160
+    top = 72
   end
   object QryServicoCli1: TZQuery
     Connection = DtmConexao.zConexao
@@ -220,7 +220,7 @@ object DtmClientes: TDtmClientes
     )
     Params = <>
     left = 24
-    top = 232
+    top = 128
     object QryServicoCli1Cliente: TStringField
       FieldKind = fkData
       FieldName = 'Cliente'

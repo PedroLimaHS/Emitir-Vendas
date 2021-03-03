@@ -9,7 +9,8 @@ uses
   Interfaces, // this includes the LCL widgetset
   Forms, uPrincipal, Ulogin, zcomponent, U_DtmConexao, uClientes, U_DtmClientes,
   U_Cliente, U_frmPesquisarCliente, U_Util, U_Usuario, u_RelatorioClientes,
-  u_relatorioBase, U_FrmFiltroRelatorioBase, U_FiltroPesquisaCliente, u_frmDistribuicaoCli
+  u_relatorioBase, U_FrmFiltroRelatorioBase, U_FiltroPesquisaCliente,
+  u_frmDistribuicaoCli, U_dtmDistribuicao
   { you can add units after this };
 
 {$R *.res}
@@ -28,6 +29,7 @@ begin
   Application.CreateForm(TFrmFiltroRelatorioBase, FrmFiltroRelatorioBase);
   Application.CreateForm(TFiltroPesquisaCliente, FiltroPesquisaCliente);
   Application.CreateForm(TFrmDistribuicaoCLi, FrmDistribuicaoCLi);
+  Application.CreateForm(TDtmdistribuicao, Dtmdistribuicao);
   Application.Run;
 end.
 

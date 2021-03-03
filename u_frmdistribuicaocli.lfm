@@ -1,14 +1,13 @@
 object FrmDistribuicaoCLi: TFrmDistribuicaoCLi
-  Left = -974
+  Left = 640
   Height = 581
-  Top = 114
+  Top = 100
   Width = 685
   Caption = 'FrmDistribuicaoCLi'
   ClientHeight = 581
   ClientWidth = 685
   OnCreate = FormCreate
   OnDestroy = FormDestroy
-  OnKeyDown = FormKeyDown
   OnShow = FormShow
   LCLVersion = '2.0.2.0'
   object GroupBox1: TGroupBox
@@ -52,15 +51,23 @@ object FrmDistribuicaoCLi: TFrmDistribuicaoCLi
     TabOrder = 1
   end
   object Memo1: TMemo
-    Left = 224
+    Left = 528
     Height = 90
-    Top = 240
+    Top = 200
     Width = 150
     Lines.Strings = (
       'Memo1'
     )
     TabOrder = 2
-    Visible = False
+  end
+  object Button1: TButton
+    Left = 104
+    Height = 25
+    Top = 272
+    Width = 75
+    Caption = 'Button1'
+    OnClick = Button1Click
+    TabOrder = 3
   end
   object dsCliente: TDataSource
     DataSet = DtmClientes.Qrycliente

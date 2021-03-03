@@ -1,0 +1,41 @@
+object Dtmdistribuicao: TDtmdistribuicao
+  OldCreateOrder = False
+  Height = 349
+  HorizontalOffset = 594
+  VerticalOffset = 92
+  Width = 567
+  PPI = 96
+  object QryMaxChave: TZReadOnlyQuery
+    Connection = DtmConexao.zConexao
+    SQL.Strings = (
+      'select vendas from numeracao'
+    )
+    Params = <>
+    left = 400
+    top = 96
+  end
+  object QrySelectValues: TZReadOnlyQuery
+    Connection = DtmConexao.zConexao
+    Params = <>
+    left = 128
+    top = 72
+  end
+  object QryInsertProdutos: TZQuery
+    Connection = DtmConexao.zConexao
+    Params = <>
+    left = 128
+    top = 16
+  end
+  object QryCliente: TZReadOnlyQuery
+    Connection = DtmConexao.zConexao
+    Params = <>
+    left = 128
+    top = 152
+  end
+  object QryMaxChave1: TZQuery
+    Connection = DtmConexao.zConexao
+    Params = <>
+    left = 288
+    top = 214
+  end
+end

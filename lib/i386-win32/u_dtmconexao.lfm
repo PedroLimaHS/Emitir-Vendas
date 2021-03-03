@@ -1,9 +1,9 @@
 object DtmConexao: TDtmConexao
   OldCreateOrder = False
-  Height = 409
+  Height = 178
   HorizontalOffset = 639
   VerticalOffset = 219
-  Width = 488
+  Width = 249
   PPI = 96
   object zConexao: TZConnection
     ControlsCodePage = cCP_UTF8
@@ -20,7 +20,7 @@ object DtmConexao: TDtmConexao
     Database = 'Provider=SQLOLEDB.1;Password='''';Persist Security Info=True;User ID=''sa'';Initial Catalog=''SingemSQL'';Data Source=''localhost\SQLEXPRESS'''
     User = 'sa'
     Protocol = 'ado'
-    left = 200
-    top = 8
+    left = 96
+    top = 16
   end
 end

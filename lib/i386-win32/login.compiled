@@ -2,5 +2,4 @@
 <CONFIG>
   <Compiler Value="C:\lazarus\fpc\3.0.4\bin\i386-win32\fpc.exe" Date="1317892300"/>
   <Params Value=" -MObjFPC -Scghi -O1 -g -gl -WG -l -vewnhibq -FiD:\LOGIN_BASICO\lib\i386-win32 -FuD:\lazarus\packages\lazarus\lib\zcomponent\i386-win32 &quot;-FuC:\transporte\TransporteApp-master\desktop\Componentes de terceiros\fortesreport-ce-master\Binary\libLaz\i386-win32&quot; -FuC:\lazarus\components\printers\lib\i386-win32\win32 -FuC:\lazarus\components\ideintf\units\i386-win32\win32 -FuC:\lazarus\components\lazcontrols\lib\i386-win32\win32 -FuC:\lazarus\components\cairocanvas\lib\i386-win32\win32 -FuD:\lazarus\packages\lazarus\lib\zdbc\i386-win32 -FuC:\lazarus\lcl\units\i386-win32\win32 -FuD:\lazarus\packages\lazarus\lib\zplain\i386-win32 -FuD:\lazarus\packages\lazarus\lib\zparsesql\i386-win32 -FuC:\lazarus\lcl\units\i386-win32 -FuD:\lazarus\packages\lazarus\lib\zcore\i386-win32 -FuC:\lazarus\components\lazutils\lib\i386-win32 -FuC:\lazarus\packager\units\i386-win32 -FuD:\LOGIN_BASICO\ -FUD:\LOGIN_BASICO\lib\i386-win32\ -FED:\LOGIN_BASICO\ -oD:\LOGIN_BASICO\login.exe -dLCL -dLCLwin32 login.lpr"/>
-  <Complete Value="False"/>
 </CONFIG>

@@ -1,27 +1,27 @@
 object frmpesquisarcliente: Tfrmpesquisarcliente
-  Left = 679
+  Left = 448
   Height = 266
-  Top = 356
-  Width = 880
+  Top = 281
+  Width = 858
   BorderIcons = []
   BorderStyle = bsSingle
   Caption = 'Pesquisar Clientes'
   ClientHeight = 266
-  ClientWidth = 880
+  ClientWidth = 858
   OnCreate = FormCreate
   Position = poOwnerFormCenter
-  LCLVersion = '2.0.10.0'
+  LCLVersion = '2.0.2.0'
   object Panel1: TPanel
     Left = 0
     Height = 30
     Top = 0
-    Width = 880
+    Width = 858
     Align = alTop
     ClientHeight = 30
-    ClientWidth = 880
+    ClientWidth = 858
     TabOrder = 0
     object btnSair: TSpeedButton
-      Left = 846
+      Left = 824
       Height = 28
       Hint = 'Sair'
       Top = 1
@@ -122,7 +122,7 @@ object frmpesquisarcliente: Tfrmpesquisarcliente
     Left = 0
     Height = 230
     Top = 36
-    Width = 880
+    Width = 858
     Align = alBottom
     Color = clNone
     Columns = <    
@@ -173,6 +173,6 @@ object frmpesquisarcliente: Tfrmpesquisarcliente
     ParentFont = False
   end
   object dsCliente: TDataSource
-    Left = 800
+    left = 800
   end
 end

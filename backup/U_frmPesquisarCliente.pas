@@ -59,11 +59,9 @@ end;
 
 procedure Tfrmpesquisarcliente.btnListarClick(Sender: TObject);
 begin
-
   FiltroPesquisaCliente := TFiltroPesquisaCliente.Create(Self);
   try
     FiltroPesquisaCliente.ShowModal;
-
   finally
     FreeAndNil(FiltroPesquisaCliente);
   end;
@@ -72,7 +70,7 @@ end;
 procedure Tfrmpesquisarcliente.DBGrid1TitleClick(Column: TColumn);
 begin
   lblPesquisa.Caption := Column.Title.Caption;
-  gsCampoPesq := Column.FieldName;
+  gsCampoPesq := Columnprocedure.FieldName;
   pintaTituloGrid(Column.Title.Caption);
   lblPesquisa.Visible:= True;
 

@@ -43,8 +43,6 @@ function TDtmConexao.abreConexao: Boolean;
 begin
   try
     zConexao.Connected:= true;
-
-
   except
     Application.MessageBox('Erro ao conectar com o banco de dados. Aplicação será finalizada!', 'Atenção');
     Application.Terminate;
