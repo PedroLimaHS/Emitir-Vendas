@@ -22,3 +22,31 @@ GO
 
 SET ANSI_PADDING OFF
 GO
+
+
+
+
+
+select Chave1,Cliente, produto, preco, Descricao, Documento from estoque where Vendedor='37' and chave1 >'15471' and Cliente='00007'
+
+delete from estoque where Vendedor='37'
+
+select * from Numeracao
+
+insert into Estoque (Chave1, Data, Produto, Quantidade,Preco,Vendedor ,tipo , Faturado , ER, Cliente,Historico, Documento, Cancelado, pp , Responsavel , Descricao)
+values ('15383' ,:datanow ,'026', '-1','1550','37','Saída2','1','T','00001','extremoz',(select max(documento)+1from Estoque) ,'F','1550','thiago', 'manuntenção do sistema' )
+
+
+select jf.Cliente, c.Nome, jf.produto,  jf.valor,          
+                            jf.descricaoserv    
+                            from Cli_servicoJF as jf                                
+                            inner join Cad_Clientes as c on jf.cliente = c.Cliente  
+                            WHERE  c.Bloqueio='F' 
+                            order by 1
+
+
+select * from Cad_Produtos where Servico='T' and Grupo='0001'
+
+
+
+update Cad_Produtos set Descricao = REPLACE(Descricao,'julho/2020.','') where Servico='T' and Grupo='0001'

@@ -187,10 +187,7 @@ function TDtmClientes.carregaprodutocliente(strFiltroSql: String): boolean;
   end;
 end;
 
-procedure TDtmClientes.maxchave(Sender: TObject);
-begin
 
-end;
 
 function TDtmClientes.updateprodutocliente(CodCliente: String;Valor: String;DescricaoServ: String;Produto: String): boolean;
 var

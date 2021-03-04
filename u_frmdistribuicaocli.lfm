@@ -1,7 +1,7 @@
 object FrmDistribuicaoCLi: TFrmDistribuicaoCLi
-  Left = 640
+  Left = 560
   Height = 581
-  Top = 100
+  Top = 130
   Width = 685
   Caption = 'FrmDistribuicaoCLi'
   ClientHeight = 581
@@ -16,7 +16,41 @@ object FrmDistribuicaoCLi: TFrmDistribuicaoCLi
     Top = 0
     Width = 593
     Caption = 'GroupBox1'
+    ClientHeight = 93
+    ClientWidth = 589
     TabOrder = 0
+    object LblMes: TLabel
+      Left = 64
+      Height = 15
+      Top = 8
+      Width = 23
+      Caption = 'MÊS'
+      ParentColor = False
+    end
+    object Edtmes: TEdit
+      Left = 64
+      Height = 23
+      Top = 32
+      Width = 64
+      CharCase = ecUppercase
+      ParentFont = False
+      TabOrder = 0
+    end
+    object LblAno: TLabel
+      Left = 152
+      Height = 15
+      Top = 8
+      Width = 26
+      Caption = 'ANO'
+      ParentColor = False
+    end
+    object EdtAno: TEdit
+      Left = 152
+      Height = 23
+      Top = 32
+      Width = 48
+      TabOrder = 1
+    end
   end
   object DBGrid1: TDBGrid
     Left = 0

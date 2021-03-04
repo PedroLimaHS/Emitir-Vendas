@@ -49,7 +49,6 @@ implementation
 
 procedure TfrmLogin.btnSairClick(Sender: TObject);
 begin
-  self.ModalResult:=mrCancel;
   Application.Terminate;
 end;
 

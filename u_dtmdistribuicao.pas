@@ -22,7 +22,9 @@ type
   public
     function maxChave(): string;
     procedure SelectValores();
-    procedure InsertProdutos(chave: String; qry: TZReadOnlyQuery);
+    procedure InsertProdutos(chave: String; (*produto: String; valor: String;
+      cliente: String; nome: String; descricaoserv: String;*) qry: TZReadOnlyQuery
+  );
   end;
 
 var
@@ -44,7 +46,6 @@ begin
     QryMaxChave1.Open;
 
    liResult := IntToStr(StrToIntDef(QryMaxChave1.FieldByName('VENDAS').AsString, 0) + 1);
-      ShowMessage(liResult);
 
     QryMaxChave1.Close;
     QryMaxChave1.sql.Clear;
@@ -67,16 +68,26 @@ begin
   end;
 end;
 
-procedure TDtmdistribuicao.InsertProdutos(chave:String; qry: TZReadOnlyQuery);
+procedure TDtmdistribuicao.InsertProdutos(chave:String;  qry: TZReadOnlyQuery);(*produto:String; valor:String; cliente:String; nome:String; descricaoserv:String;*)
+var
+  datanow: string;
+  teste: string;
 begin
   try
     QryInsertProdutos.Close;
     QryInsertProdutos.SQL.Clear;
     QryInsertProdutos.SQL.Add('insert into Estoque (Chave1, Data, Produto, Quantidade,Preco,Vendedor ,tipo , Faturado , ER, Cliente,Historico, Documento, Cancelado, pp , Responsavel , Descricao)');
-    QryInsertProdutos.SQL.Add('values (:chave ,CONVERT (date, GETDATE()) ,:produto, ''-1'',:valor,''37'',''Saída2'',''1'',''T'',:cliente,:Nome,(select max(documento)+1from Estoque) ,''F'',:valor,''thiago'', :descricaoserv )');
-
+    QryInsertProdutos.SQL.Add('values (:chave ,:datanow ,:produto, ''-1'',:valor,''37'',''Saída2'',''1'',''T'',:cliente,:Nome,(select max(documento)+1from Estoque) ,''F'',:valor,''thiago'', :descricaoserv )');
     QryInsertProdutos.ParamByName('chave').AsString := chave;
+    QryInsertProdutos.ParamByName('produto').AsString :=qry.FieldByName('produto').AsString;
+    QryInsertProdutos.ParamByName('valor').AsString := qry.FieldByName('valor').AsString;
+    QryInsertProdutos.ParamByName('cliente').AsString := qry.FieldByName('cliente').AsString;
+    QryInsertProdutos.ParamByName('nome').AsString := qry.FieldByName('nome').AsString;
+    QryInsertProdutos.ParamByName('descricaoserv').AsString := qry.FieldByName('descricaoserv').AsString;
+    datanow:= DateToStr(now);
+    QryInsertProdutos.ParamByName('datanow').AsString := datanow;
     QryInsertProdutos.ExecSQL;
+    QryMaxChave1.ApplyUpdates;
     QryInsertProdutos.Connection.Commit;
 
   except

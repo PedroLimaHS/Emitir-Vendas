@@ -1095,6 +1095,7 @@ object frmLogin: TfrmLogin
     Width = 176
     OnKeyPress = edtUsuarioKeyPress
     TabOrder = 0
+    Text = '1'
   end
   object edtSenha: TEdit
     Left = 8
@@ -1105,6 +1106,7 @@ object frmLogin: TfrmLogin
     OnKeyPress = edtSenhaKeyPress
     PasswordChar = '*'
     TabOrder = 1
+    Text = '1'
   end
   object Label1: TLabel
     Left = 8

@@ -22,7 +22,6 @@ type
     DSDropFormaPagamentoCli: TDataSource;
     DBCBFormaPagamento: TDBComboBox;
     DBComboBox1: TDBComboBox;
-    Edtmes: TEdit;
     edtBairro: TEdit;
     edtCgc: TEdit;
     edtCidade: TEdit;
@@ -30,16 +29,12 @@ type
     edtEmail: TEdit;
     edtEndereco: TEdit;
     edtFone: TEdit;
-    EdtAno: TEdit;
     edtNome: TEdit;
     EdtProCLi_Codigo: TEdit;
     EdtProCLi_Descricao: TEdit;
     EdtProCLi_Valor: TEdit;
     edtUF: TEdit;
     GroupBox1: TGroupBox;
-    Lblbarra: TLabel;
-    LblMes: TLabel;
-    LblAno: TLabel;
     LBLBairro: TLabel;
     LBLCGC: TLabel;
     LBLCidade: TLabel;
