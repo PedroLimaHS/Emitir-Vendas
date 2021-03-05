@@ -98,7 +98,7 @@ begin
   begin
        dtmClientes.Qrycliente.Locate(gsCampoPesq,edtPesquisa.Text,[loPartialKey, loCaseInsensitive]);
        dtmClientes.QryServicoCli.Locate(gsCampoPesq,edtPesquisa.Text,[loPartialKey, loCaseInsensitive]);
-       //dtmClientes.Qrycliente.SQL.Add('ORDER BY' + lblPesquisa.Caption);
+
 
   end;
 end;

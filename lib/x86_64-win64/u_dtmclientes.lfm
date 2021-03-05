@@ -2,13 +2,13 @@ object DtmClientes: TDtmClientes
   OnCreate = DataModuleCreate
   OldCreateOrder = False
   Height = 343
-  HorizontalOffset = 1273
-  VerticalOffset = 240
+  HorizontalOffset = 891
+  VerticalOffset = 65
   Width = 435
   object Qrycliente: TZReadOnlyQuery
     Connection = DtmConexao.zConexao
     SQL.Strings = (
-      'select cliente,Nome,Endereco,Bairro,Cidade,UF,CEP,CGC,Fone,email from Cad_Clientes'
+      'select cliente,Nome,Endereco,Bairro,Cidade,UF,CEP,CGC,Fone,email,Bloqueio  from Cad_Clientes'
     )
     Params = <>
     Left = 24
@@ -113,6 +113,16 @@ object DtmClientes: TDtmClientes
       Required = False
       Size = 50
     end
+    object QryclienteBloqueio: TStringField
+      FieldKind = fkData
+      FieldName = 'Bloqueio'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 4
+    end
   end
   object QryPsqCliente: TZReadOnlyQuery
     Connection = DtmConexao.zConexao
@@ -186,7 +196,7 @@ object DtmClientes: TDtmClientes
     )
     Params = <>
     Left = 24
-    Top = 160
+    Top = 72
   end
   object QryServicoCli1: TZQuery
     Connection = DtmConexao.zConexao
@@ -209,7 +219,7 @@ object DtmClientes: TDtmClientes
     )
     Params = <>
     Left = 24
-    Top = 232
+    Top = 128
     object QryServicoCli1Cliente: TStringField
       FieldKind = fkData
       FieldName = 'Cliente'

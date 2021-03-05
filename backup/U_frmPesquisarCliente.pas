@@ -70,7 +70,7 @@ end;
 procedure Tfrmpesquisarcliente.DBGrid1TitleClick(Column: TColumn);
 begin
   lblPesquisa.Caption := Column.Title.Caption;
-  gsCampoPesq := Columnprocedure.FieldName;
+  gsCampoPesq := Column.FieldName;
   pintaTituloGrid(Column.Title.Caption);
   lblPesquisa.Visible:= True;
 

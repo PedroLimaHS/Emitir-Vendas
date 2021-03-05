@@ -1,0 +1,37 @@
+object Dtmdistribuicao: TDtmdistribuicao
+  OldCreateOrder = False
+  Height = 349
+  HorizontalOffset = 978
+  VerticalOffset = 239
+  Width = 567
+  object QrySelectValues: TZReadOnlyQuery
+    Connection = DtmConexao.zConexao
+    Params = <>
+    Left = 152
+    Top = 24
+  end
+  object QryInsertProdutos: TZQuery
+    Connection = DtmConexao.zConexao
+    Params = <>
+    Left = 56
+    Top = 24
+  end
+  object QryCliente: TZReadOnlyQuery
+    Connection = DtmConexao.zConexao
+    Params = <>
+    Left = 232
+    Top = 24
+  end
+  object QryMaxChave: TZQuery
+    Connection = DtmConexao.zConexao
+    Params = <>
+    Left = 480
+    Top = 24
+  end
+  object QryUpdateDescServ: TZQuery
+    Connection = DtmConexao.zConexao
+    Params = <>
+    Left = 56
+    Top = 160
+  end
+end

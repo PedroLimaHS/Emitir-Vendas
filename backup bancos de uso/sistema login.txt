@@ -14,7 +14,7 @@ GO
 CREATE TABLE [dbo].[Cli_servicoJF](
 	[cliente] [varchar](50) NULL,
 	[produto] [varchar](50) NULL,
-	[valor] [float] NULL,
+	[valor] [Varchar](10) NULL,
 	[descricaoserv] [varchar](50) NULL
 ) ON [PRIMARY]
 
@@ -32,9 +32,14 @@ select Chave1,Cliente, produto, preco, Descricao, Documento from estoque where V
 delete from estoque where Vendedor='37'
 
 select * from Numeracao
+-----------------------------***********************
+insert into Estoque (Chave1, Data, Produto, Quantidade,Custo,Preco,Vendedor ,tipo , Faturado , ER, Cliente,Historico, Documento, Cancelado, pp , Responsavel , Descricao)
+values ( chave1 ,data ,'026', '-1','0','1550','37','Saída2','1','T','00001','extremoz',documento ,'F','1550','thiago', 'manuntenção do sistema' )
 
-insert into Estoque (Chave1, Data, Produto, Quantidade,Preco,Vendedor ,tipo , Faturado , ER, Cliente,Historico, Documento, Cancelado, pp , Responsavel , Descricao)
-values ('15383' ,:datanow ,'026', '-1','1550','37','Saída2','1','T','00001','extremoz',(select max(documento)+1from Estoque) ,'F','1550','thiago', 'manuntenção do sistema' )
+insert into vendas(Chave,Cliente, Emissao, Documento, ER, Vendedor, ComissVendedor, Emissor, Observacoes,CFOP,TpRecebimento,Devolucao,DescontoPP,ValorDesconto,DescontoValor, Classificacao,Desconto,DescontoPer,ICMSubst,Impresso,
+Vias,ICMSubstValor,Faturamento,BaseIS,PDV,EliminarCarregamento,ContigenciaNFe,Cliente2)
+
+-----------------------------***********************
 
 
 select jf.Cliente, c.Nome, jf.produto,  jf.valor,          
@@ -48,5 +53,56 @@ select jf.Cliente, c.Nome, jf.produto,  jf.valor,
 select * from Cad_Produtos where Servico='T' and Grupo='0001'
 
 
-
 update Cad_Produtos set Descricao = REPLACE(Descricao,'julho/2020.','') where Servico='T' and Grupo='0001'
+
+
+//update cli_servicojf set descricaoserv =''MANUTENÇÃO DO SISTEMA '' + (select Descricao from Cad_Produtos where produto='001')+ ' - ' + 'FEVEREIRO/2021' where produto='001'
+
+
+
+lsFilDescSql := lsFilDescSql + EdtProCLi_Descricao.Text +' '+ Edtmes.Text + ' / '+ EdtAno.text;
+
+
+
+
+-----------------------------***********************
+
+
+insert into Cli_servicoJF (cliente, produto, valor)
+select cliente , produto, preco from Estoque where data between'01/02/2021' and '26/02/2021'
+
+
+select * from vendas where Chave='16810'
+select * from Estoque where  Vendedor='37'
+select * from CAReceber where Chave='16810'
+select * from cli_servicojf
+
+select * from Cad_Produtos
+select * from Estoque where Vendedor ='37'
+
+update CLI_SERVICOJF set descricaoserv ='MANUTENÇÃO DO SISTEMA ' + P.Aplicacao + ' - ' + 'peu' +'/'+'9874'
+FROM CLI_SERVICOJF AS JF
+INNER JOIN Cad_Produtos AS P
+ON JF.PRODUTO = P.PRODUTO 
+where p.grupo='0001' 
+
+SELECT * FROM CLI_SERVICOJF
+
+MANUTENÇÃO DO SISTEMA  POSSEIDON - FEVEREIRO/2021.
+SELECT * FROM Cad_Produtos
+
+-----------------------------***********************
+
+
+
+
+
+
+
+
+
+
+
+
+
+

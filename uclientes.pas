@@ -152,8 +152,8 @@ begin
       EdtProCLi_Descricao.SetFocus;
       Exit;
     end;
-      lsFilDescSql := lsFilDescSql + EdtProCLi_Descricao.Text +' '+ Edtmes.Text + ' / '+ EdtAno.text;
-      dtmClientes.updateprodutocliente(edtCliente.Text ,EdtProCLi_Valor.Text, lsFilDescSql , EdtProCLi_Codigo.Text);
+      //lsFilDescSql := lsFilDescSql + EdtProCLi_Descricao.Text +' '+ Edtmes.Text + ' / '+ EdtAno.text;
+      dtmClientes.updateprodutocliente(edtCliente.Text ,EdtProCLi_Valor.Text, EdtProCLi_Descricao.Text , EdtProCLi_Codigo.Text);
       dtmClientes.carregaprodutocliente(edtCliente.Text);
       Preencerstringgrid();
       limparcamposservicos()
@@ -207,8 +207,6 @@ begin
   edtuf.Text := '';
   edtFone.Text := '';
   edtEmail.Text := '';
-  EdtAno.Text:='';
-  Edtmes.Text:='';
   EdtProCLi_Descricao.Text := '';
   EdtProCLi_Codigo.Text := '';
   EdtProCLi_Valor.Text := '';

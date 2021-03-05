@@ -22,7 +22,6 @@ type
     DSDropFormaPagamentoCli: TDataSource;
     DBCBFormaPagamento: TDBComboBox;
     DBComboBox1: TDBComboBox;
-    Edtmes: TEdit;
     edtBairro: TEdit;
     edtCgc: TEdit;
     edtCidade: TEdit;
@@ -30,16 +29,12 @@ type
     edtEmail: TEdit;
     edtEndereco: TEdit;
     edtFone: TEdit;
-    EdtAno: TEdit;
     edtNome: TEdit;
     EdtProCLi_Codigo: TEdit;
     EdtProCLi_Descricao: TEdit;
     EdtProCLi_Valor: TEdit;
     edtUF: TEdit;
     GroupBox1: TGroupBox;
-    Lblbarra: TLabel;
-    LblMes: TLabel;
-    LblAno: TLabel;
     LBLBairro: TLabel;
     LBLCGC: TLabel;
     LBLCidade: TLabel;
@@ -158,7 +153,7 @@ begin
       Exit;
     end;
       lsFilDescSql := lsFilDescSql + EdtProCLi_Descricao.Text +' '+ Edtmes.Text + ' / '+ EdtAno.text;
-      dtmClientes.updateprodutocliente(edtCliente.Text ,EdtProCLi_Valor.Text, lsFilDescSql , EdtProCLi_Codigo.Text);
+      dtmClientes.updateprodutocliente(edtCliente.Text ,EdtProCLi_Valor.Text, EdtProCLi_Descricao.Text , EdtProCLi_Codigo.Text);
       dtmClientes.carregaprodutocliente(edtCliente.Text);
       Preencerstringgrid();
       limparcamposservicos()
@@ -212,8 +207,6 @@ begin
   edtuf.Text := '';
   edtFone.Text := '';
   edtEmail.Text := '';
-  EdtAno.Text:='';
-  Edtmes.Text:='';
   EdtProCLi_Descricao.Text := '';
   EdtProCLi_Codigo.Text := '';
   EdtProCLi_Valor.Text := '';

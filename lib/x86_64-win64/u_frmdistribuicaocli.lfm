@@ -1,0 +1,131 @@
+object FrmDistribuicaoCLi: TFrmDistribuicaoCLi
+  Left = 560
+  Height = 581
+  Top = 130
+  Width = 685
+  Caption = 'FrmDistribuicaoCLi'
+  ClientHeight = 581
+  ClientWidth = 685
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  LCLVersion = '2.0.10.0'
+  object GroupBox1: TGroupBox
+    Left = 5
+    Height = 96
+    Top = 0
+    Width = 673
+    Caption = 'Configuração da descrição dos produtos'
+    ClientHeight = 76
+    ClientWidth = 669
+    TabOrder = 0
+    OnClick = GroupBox1Click
+    object LblMes: TLabel
+      Left = 32
+      Height = 15
+      Top = 8
+      Width = 23
+      Caption = 'MÊS'
+      ParentColor = False
+    end
+    object Edtmes: TEdit
+      Left = 32
+      Height = 23
+      Top = 24
+      Width = 64
+      CharCase = ecUppercase
+      ParentFont = False
+      TabOrder = 0
+    end
+    object LblAno: TLabel
+      Left = 120
+      Height = 15
+      Top = 8
+      Width = 26
+      Caption = 'ANO'
+      ParentColor = False
+    end
+    object EdtAno: TEdit
+      Left = 120
+      Height = 23
+      Top = 24
+      Width = 48
+      TabOrder = 1
+    end
+    object BtnProdutos: TButton
+      Left = 192
+      Height = 25
+      Top = 22
+      Width = 75
+      Caption = 'GERAR'
+      OnClick = BtnProdutosClick
+      TabOrder = 2
+    end
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 204
+    Top = 377
+    Width = 681
+    Color = clWindow
+    Columns = <    
+      item
+        ButtonStyle = cbsCheckboxColumn
+        Title.Caption = 'Bloqueio'
+        ValueChecked = 'T'
+        ValueUnchecked = 'F'
+        FieldName = 'Bloqueio'
+      end    
+      item
+        Title.Caption = 'nome'
+        Width = 300
+        FieldName = 'nome'
+      end    
+      item
+        Title.Caption = 'cgc'
+        Width = 120
+        FieldName = 'cgc'
+      end    
+      item
+        Title.Caption = 'cidade'
+        Width = 155
+        FieldName = 'cidade'
+      end>
+    DataSource = dsCliente
+    TabOrder = 1
+  end
+  object Button1: TButton
+    Left = 600
+    Height = 25
+    Top = 344
+    Width = 75
+    Caption = 'Button1'
+    OnClick = Button1Click
+    TabOrder = 2
+  end
+  object GroupBox2: TGroupBox
+    Left = 5
+    Height = 105
+    Top = 96
+    Width = 667
+    Caption = 'GroupBox2'
+    ClientHeight = 85
+    ClientWidth = 663
+    TabOrder = 3
+    object Memo1: TMemo
+      Left = 120
+      Height = 90
+      Top = -8
+      Width = 536
+      Lines.Strings = (
+        'Memo1'
+      )
+      TabOrder = 0
+    end
+  end
+  object dsCliente: TDataSource
+    DataSet = DtmClientes.Qrycliente
+    Left = 544
+    Top = 320
+  end
+end

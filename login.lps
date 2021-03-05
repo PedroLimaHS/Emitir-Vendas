@@ -19,12 +19,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uPrincipal"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="35"/>
-        <CursorPos X="35" Y="36"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="40"/>
+        <CursorPos X="62" Y="58"/>
         <UsageCount Value="202"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="ulogin.pas"/>
@@ -46,8 +44,7 @@
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="U_DtmConexao"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="26"/>
-        <CursorPos X="31" Y="45"/>
+        <CursorPos X="40" Y="33"/>
         <UsageCount Value="202"/>
       </Unit3>
       <Unit4>
@@ -58,10 +55,11 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uClientes"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="133"/>
-        <CursorPos X="43" Y="140"/>
+        <TopLine Value="230"/>
+        <CursorPos X="105" Y="247"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit4>
       <Unit5>
         <Filename Value="u_dtmclientes.pas"/>
@@ -70,9 +68,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="U_DtmClientes"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="205"/>
-        <CursorPos X="80" Y="192"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="179"/>
+        <CursorPos X="34" Y="209"/>
         <FoldState Value=" TKiS0z13"/>
         <UsageCount Value="203"/>
         <Loaded Value="True"/>
@@ -119,7 +117,7 @@
         <UnitName Value="U_dtmUtil"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="67" Y="4"/>
-        <UsageCount Value="195"/>
+        <UsageCount Value="202"/>
       </Unit10>
       <Unit11>
         <Filename Value="u_relatorioclientes.pas"/>
@@ -131,7 +129,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="101"/>
         <CursorPos X="53" Y="130"/>
-        <UsageCount Value="195"/>
+        <UsageCount Value="202"/>
       </Unit11>
       <Unit12>
         <Filename Value="u_relatoriobase.pas"/>
@@ -142,7 +140,7 @@
         <UnitName Value="u_relatorioBase"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="58" Y="48"/>
-        <UsageCount Value="195"/>
+        <UsageCount Value="202"/>
       </Unit12>
       <Unit13>
         <Filename Value="u_frmfiltrorelatoriobase.pas"/>
@@ -154,7 +152,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="11"/>
         <CursorPos X="3" Y="18"/>
-        <UsageCount Value="181"/>
+        <UsageCount Value="191"/>
       </Unit13>
       <Unit14>
         <Filename Value="u_filtropesquisacliente.pas"/>
@@ -166,7 +164,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="37"/>
         <CursorPos X="3" Y="27"/>
-        <UsageCount Value="181"/>
+        <UsageCount Value="191"/>
       </Unit14>
       <Unit15>
         <Filename Value="u_frmdistribuicaocli.pas"/>
@@ -175,10 +173,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="u_frmDistribuicaoCli"/>
-        <EditorIndex Value="4"/>
-        <TopLine Value="66"/>
-        <CursorPos X="102" Y="86"/>
-        <UsageCount Value="66"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="40"/>
+        <CursorPos X="25" Y="104"/>
+        <FoldState Value=" T3i90301121 T1iA02?"/>
+        <UsageCount Value="76"/>
         <Loaded Value="True"/>
       </Unit15>
       <Unit16>
@@ -188,10 +187,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="U_dtmDistribuicao"/>
-        <EditorIndex Value="5"/>
-        <TopLine Value="36"/>
-        <CursorPos Y="43"/>
-        <UsageCount Value="49"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="91"/>
+        <CursorPos X="48" Y="121"/>
+        <UsageCount Value="59"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit16>
@@ -203,24 +202,24 @@
         <UnitName Value="U_DtmClientes"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="21" Y="2"/>
-        <UsageCount Value="4"/>
+        <UsageCount Value="3"/>
       </Unit17>
       <Unit18>
         <Filename Value="C:\lazarus\lcl\include\control.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="3539"/>
         <CursorPos X="51" Y="3545"/>
-        <UsageCount Value="2"/>
+        <UsageCount Value="1"/>
       </Unit18>
       <Unit19>
         <Filename Value="U_frmPesquisarCliente.pas"/>
         <ComponentName Value="frmpesquisarcliente"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="52"/>
-        <CursorPos X="24" Y="73"/>
-        <UsageCount Value="82"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="67"/>
+        <CursorPos X="78" Y="73"/>
+        <UsageCount Value="87"/>
         <Loaded Value="True"/>
       </Unit19>
       <Unit20>
@@ -230,13 +229,13 @@
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="2" Y="6"/>
-        <UsageCount Value="13"/>
+        <UsageCount Value="12"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit20>
       <Unit21>
         <Filename Value="u_dtmutil.lfm"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="3"/>
+        <UsageCount Value="2"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit21>
       <Unit22>
@@ -244,21 +243,21 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="2220"/>
         <CursorPos Y="2242"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit22>
       <Unit23>
         <Filename Value="E:\lazarus\lcl\include\speedbutton.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="960"/>
         <CursorPos Y="985"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="5"/>
       </Unit23>
       <Unit24>
         <Filename Value="E:\lazarus\lcl\include\wincontrol.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="5389"/>
         <CursorPos Y="5412"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="5"/>
       </Unit24>
       <Unit25>
         <Filename Value="E:\lazarus\lcl\lclmessageglue.pas"/>
@@ -266,21 +265,21 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="85"/>
         <CursorPos Y="123"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="5"/>
       </Unit25>
       <Unit26>
         <Filename Value="E:\lazarus\lcl\interfaces\win32\win32callback.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="2646"/>
         <CursorPos Y="2680"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="5"/>
       </Unit26>
       <Unit27>
         <Filename Value="E:\lazarus\lcl\interfaces\win32\win32object.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="392"/>
         <CursorPos Y="407"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="5"/>
       </Unit27>
       <Unit28>
         <Filename Value="C:\lazarus\lcl\grids.pas"/>
@@ -288,7 +287,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="5245"/>
         <CursorPos X="59" Y="5254"/>
-        <UsageCount Value="0"/>
+        <UsageCount Value="9"/>
       </Unit28>
       <Unit29>
         <Filename Value="E:\lazarus\lcl\grids.pas"/>
@@ -296,13 +295,13 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="10932"/>
         <CursorPos X="28" Y="10954"/>
-        <UsageCount Value="2"/>
+        <UsageCount Value="1"/>
       </Unit29>
       <Unit30>
         <Filename Value="E:\FinanceiroJF\u_dtmclientes.lfm"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="145"/>
-        <UsageCount Value="0"/>
+        <UsageCount Value="9"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit30>
       <Unit31>
@@ -310,7 +309,7 @@
         <UnitName Value="U_DtmClientes"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="145"/>
-        <UsageCount Value="0"/>
+        <UsageCount Value="9"/>
       </Unit31>
       <Unit32>
         <Filename Value="E:\LOGIN_BASICO - Copia\uclientes.pas"/>
@@ -321,7 +320,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="163"/>
         <CursorPos X="64" Y="15"/>
-        <UsageCount Value="2"/>
+        <UsageCount Value="1"/>
       </Unit32>
       <Unit33>
         <Filename Value="C:\desktop\FRM\u_frmcadastroinstituicao.pas"/>
@@ -329,7 +328,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="89"/>
         <CursorPos X="37" Y="107"/>
-        <UsageCount Value="4"/>
+        <UsageCount Value="3"/>
       </Unit33>
       <Unit34>
         <Filename Value="C:\desktop\DTM\u_dtmcadastroInstituicao.pas"/>
@@ -340,7 +339,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="19"/>
         <CursorPos X="66" Y="33"/>
-        <UsageCount Value="4"/>
+        <UsageCount Value="3"/>
       </Unit34>
       <Unit35>
         <Filename Value="C:\desktop\DTM\u_dtmprincipal.pas"/>
@@ -350,28 +349,28 @@
         <UnitName Value="U_DtmPrincipal"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="5" Y="17"/>
-        <UsageCount Value="4"/>
+        <UsageCount Value="3"/>
       </Unit35>
       <Unit36>
         <Filename Value="E:\libs lazarus\zeos\src\component\ZAbstractConnection.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="948"/>
         <CursorPos Y="971"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="5"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit36>
       <Unit37>
         <Filename Value="E:\lazarus\lcl\include\buttoncontrol.inc"/>
         <EditorIndex Value="-1"/>
         <CursorPos Y="22"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="5"/>
       </Unit37>
       <Unit38>
         <Filename Value="E:\lazarus\lcl\include\buttons.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="147"/>
         <CursorPos Y="170"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="5"/>
       </Unit38>
       <Unit39>
         <Filename Value="E:\lazarus\lcl\interfaces\win32\win32wsstdctrls.pp"/>
@@ -379,129 +378,129 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="580"/>
         <CursorPos X="57" Y="597"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="5"/>
       </Unit39>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="u_dtmdistribuicao.pas"/>
-        <Caret Line="83" TopLine="74"/>
+        <Caret Line="144" TopLine="118"/>
       </Position1>
       <Position2>
         <Filename Value="u_dtmdistribuicao.pas"/>
-        <Caret Line="84" TopLine="74"/>
+        <Caret Line="143" TopLine="118"/>
       </Position2>
       <Position3>
         <Filename Value="u_dtmdistribuicao.pas"/>
-        <Caret Line="85" TopLine="74"/>
+        <Caret Line="144" TopLine="118"/>
       </Position3>
       <Position4>
         <Filename Value="u_dtmdistribuicao.pas"/>
-        <Caret Line="87" TopLine="74"/>
+        <Caret Line="146" TopLine="118"/>
       </Position4>
       <Position5>
         <Filename Value="u_dtmdistribuicao.pas"/>
-        <Caret Line="83" TopLine="74"/>
+        <Caret Line="156" TopLine="119"/>
       </Position5>
       <Position6>
         <Filename Value="u_dtmdistribuicao.pas"/>
-        <Caret Line="87" Column="5" TopLine="74"/>
+        <Caret Line="154" TopLine="119"/>
       </Position6>
       <Position7>
         <Filename Value="u_dtmdistribuicao.pas"/>
-        <Caret Line="83" TopLine="74"/>
+        <Caret Line="153" TopLine="119"/>
       </Position7>
       <Position8>
         <Filename Value="u_dtmdistribuicao.pas"/>
-        <Caret Line="87" TopLine="74"/>
+        <Caret Line="144" Column="9" TopLine="119"/>
       </Position8>
       <Position9>
         <Filename Value="u_dtmdistribuicao.pas"/>
-        <Caret Line="83" TopLine="74"/>
+        <Caret Line="146" TopLine="119"/>
       </Position9>
       <Position10>
-        <Filename Value="u_frmdistribuicaocli.pas"/>
-        <Caret Line="82" Column="102" TopLine="62"/>
+        <Filename Value="u_dtmdistribuicao.pas"/>
+        <Caret Line="156" TopLine="119"/>
       </Position10>
       <Position11>
         <Filename Value="u_dtmdistribuicao.pas"/>
-        <Caret Line="45" Column="66" TopLine="30"/>
+        <Caret Line="154" TopLine="119"/>
       </Position11>
       <Position12>
         <Filename Value="u_dtmdistribuicao.pas"/>
-        <Caret Line="41" Column="49" TopLine="30"/>
+        <Caret Line="153" TopLine="119"/>
       </Position12>
       <Position13>
         <Filename Value="u_dtmdistribuicao.pas"/>
-        <Caret Line="55" Column="57" TopLine="30"/>
+        <Caret Line="151" Column="71" TopLine="119"/>
       </Position13>
       <Position14>
-        <Filename Value="uclientes.pas"/>
-        <Caret Line="122" Column="22" TopLine="255"/>
+        <Filename Value="u_dtmdistribuicao.pas"/>
+        <Caret Line="137" Column="220" TopLine="119"/>
       </Position14>
       <Position15>
-        <Filename Value="uclientes.pas"/>
-        <Caret Line="274" Column="94" TopLine="255"/>
+        <Filename Value="u_dtmdistribuicao.pas"/>
+        <Caret Line="137" TopLine="119"/>
       </Position15>
       <Position16>
-        <Filename Value="u_frmdistribuicaocli.pas"/>
-        <Caret Line="82" Column="102" TopLine="62"/>
+        <Filename Value="u_dtmdistribuicao.pas"/>
+        <Caret Line="146" TopLine="119"/>
       </Position16>
       <Position17>
-        <Filename Value="u_frmdistribuicaocli.pas"/>
-        <Caret Line="83" Column="102" TopLine="63"/>
+        <Filename Value="u_dtmdistribuicao.pas"/>
+        <Caret Line="156" TopLine="119"/>
       </Position17>
       <Position18>
-        <Filename Value="u_frmdistribuicaocli.pas"/>
-        <Caret Line="84" Column="102" TopLine="64"/>
+        <Filename Value="uclientes.pas"/>
+        <Caret Line="155" Column="9" TopLine="132"/>
       </Position18>
       <Position19>
-        <Filename Value="uclientes.pas"/>
-        <Caret Line="145" Column="43" TopLine="138"/>
+        <Filename Value="u_frmdistribuicaocli.pas"/>
+        <Caret Line="102" TopLine="70"/>
       </Position19>
       <Position20>
-        <Filename Value="uclientes.pas"/>
-        <Caret Line="144" Column="43" TopLine="137"/>
+        <Filename Value="u_frmdistribuicaocli.pas"/>
+        <Caret Line="106" TopLine="70"/>
       </Position20>
       <Position21>
-        <Filename Value="uclientes.pas"/>
-        <Caret Line="143" Column="43" TopLine="136"/>
+        <Filename Value="u_dtmdistribuicao.pas"/>
+        <Caret Line="137" TopLine="119"/>
       </Position21>
       <Position22>
-        <Filename Value="uclientes.pas"/>
-        <Caret Line="142" Column="43" TopLine="135"/>
+        <Filename Value="u_dtmdistribuicao.pas"/>
+        <Caret Line="146" TopLine="119"/>
       </Position22>
       <Position23>
-        <Filename Value="uclientes.pas"/>
-        <Caret Line="141" Column="43" TopLine="134"/>
+        <Filename Value="u_dtmdistribuicao.pas"/>
+        <Caret Line="142" Column="77" TopLine="107"/>
       </Position23>
       <Position24>
-        <Filename Value="u_frmdistribuicaocli.pas"/>
-        <Caret Line="85" Column="102" TopLine="65"/>
+        <Filename Value="u_dtmdistribuicao.pas"/>
+        <Caret Line="137" Column="150" TopLine="109"/>
       </Position24>
       <Position25>
-        <Filename Value="u_frmdistribuicaocli.pas"/>
-        <Caret Line="89" Column="102" TopLine="69"/>
+        <Filename Value="u_dtmdistribuicao.pas"/>
+        <Caret Line="153" Column="26" TopLine="119"/>
       </Position25>
       <Position26>
-        <Filename Value="u_frmdistribuicaocli.pas"/>
-        <Caret Line="88" Column="102" TopLine="68"/>
+        <Filename Value="u_dtmdistribuicao.pas"/>
+        <Caret Line="148" Column="26" TopLine="126"/>
       </Position26>
       <Position27>
-        <Filename Value="u_frmdistribuicaocli.pas"/>
-        <Caret Line="87" Column="102" TopLine="67"/>
+        <Filename Value="u_dtmclientes.pas"/>
+        <Caret Line="4" Column="25"/>
       </Position27>
       <Position28>
-        <Filename Value="u_frmdistribuicaocli.pas"/>
-        <Caret Line="86" Column="102" TopLine="66"/>
+        <Filename Value="u_dtmclientes.pas"/>
+        <Caret Line="209" Column="26" TopLine="170"/>
       </Position28>
       <Position29>
-        <Filename Value="uclientes.pas"/>
-        <Caret Line="141" Column="43" TopLine="134"/>
+        <Filename Value="u_dtmdistribuicao.pas"/>
+        <Caret Line="97" Column="37" TopLine="17"/>
       </Position29>
       <Position30>
         <Filename Value="uclientes.pas"/>
-        <Caret Line="140" Column="43" TopLine="133"/>
+        <Caret Line="155" TopLine="132"/>
       </Position30>
     </JumpHistory>
     <RunParams>

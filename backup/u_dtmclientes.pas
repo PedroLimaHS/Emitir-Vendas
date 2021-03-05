@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, ZDataset, ZSqlUpdate, Dialogs, db, BufDataset, U_Cliente,
-  uClientes, SQLDB,U_DtmConexao;
+  uClientes, SQLDB, U_DtmConexao;
 
 type
 
@@ -139,7 +139,7 @@ begin
          Qrycliente.SQL.Text:= 'select cliente,Nome,Endereco,Bairro,Cidade,UF,CEP,CGC,Fone,email,bloqueio from Cad_Clientes';
          Qrycliente.Open;
 
-      except
+    except
     on E:Exception do
     begin
          ShowMessage('Erro ao abrir tabela clientes.'+#13+
@@ -179,7 +179,7 @@ function TDtmClientes.carregaprodutocliente(strFiltroSql: String): boolean;
    Except
     on E:Exception do
     begin
-         ShowMessage('Erro ao abrir tabela clientes.'+#13+
+         ShowMessage('Erro ao carregar os produtos dos clientes.'+#13+
          'Erro: ' + e.Message);
        Result := false
 
@@ -239,12 +239,15 @@ begin
   Except
     on E:Exception do
     begin
-      ShowMessage('Erro ao abrir tabela produtosservicos.'+#13+
+      ShowMessage('Erro ao atualizar a descrição/valor do produto desse cliente.'+#13+
          'Erro: ' + e.Message);
        Result := false
     end;
   end;
 end;
+
+
+
 
 
 end.

@@ -12,19 +12,20 @@ type
   { TDtmdistribuicao }
 
   TDtmdistribuicao = class(TDataModule)
-    QryMaxChave: TZReadOnlyQuery;
     QryInsertProdutos: TZQuery;
     QrySelectValues: TZReadOnlyQuery;
     QryCliente: TZReadOnlyQuery;
-    QryMaxChave1: TZQuery;
+    QryMaxChave: TZQuery;
+    QryUpdateDescServ: TZQuery;
   private
+
 
   public
     function maxChave(): string;
+    function UpdateProdutosServ(mes: string; ano: string): boolean;
     procedure SelectValores();
-    procedure InsertProdutos(chave: String; (*produto: String; valor: String;
-      cliente: String; nome: String; descricaoserv: String;*) qry: TZReadOnlyQuery
-  );
+    procedure InsertProdutos(chave: String; qry: TZReadOnlyQuery );
+
   end;
 
 var
@@ -40,20 +41,20 @@ var
   liResult: String;
 begin
   try
-//    QryMaxChave1.Close;
-    QryMaxChave1.sql.Clear;
-    QryMaxChave1.SQL.Text := 'select vendas from numeracao';
-    QryMaxChave1.Open;
+    QryMaxChave.Close;
+    QryMaxChave.sql.Clear;
+    QryMaxChave.SQL.Text := 'select vendas from numeracao';
+    QryMaxChave.Open;
 
-   liResult := IntToStr(StrToIntDef(QryMaxChave1.FieldByName('VENDAS').AsString, 0) + 1);
+   liResult := IntToStr(StrToIntDef(QryMaxChave.FieldByName('VENDAS').AsString, 0) + 1);
 
-    QryMaxChave1.Close;
-    QryMaxChave1.sql.Clear;
-    QryMaxChave1.SQL.Text := 'update numeracao set vendas = :vendas';
-    QryMaxChave1.ParamByName('vendas').AsString := liResult;
-    QryMaxChave1.ExecSQL;
-    QryMaxChave1.ApplyUpdates;
-    QryMaxChave1.Connection.Commit;
+    QryMaxChave.Close;
+    QryMaxChave.sql.Clear;
+    QryMaxChave.SQL.Text := 'update numeracao set vendas = :vendas';
+    QryMaxChave.ParamByName('vendas').AsString := liResult;
+    QryMaxChave.ExecSQL;
+    QryMaxChave.ApplyUpdates;
+    QryMaxChave.Connection.Commit;
 
 
     Result := liResult;
@@ -68,11 +69,10 @@ begin
   end;
 end;
 
-procedure TDtmdistribuicao.InsertProdutos(chave:String;  qry: TZReadOnlyQuery);(*produto:String; valor:String; cliente:String; nome:String; descricaoserv:String;*)
+procedure TDtmdistribuicao.InsertProdutos(chave:String; qry: TZReadOnlyQuery);
 var
   datanow: string;
-  teste: string;
-begin
+  begin
   try
     QryInsertProdutos.Close;
     QryInsertProdutos.SQL.Clear;
@@ -87,9 +87,8 @@ begin
     datanow:= DateToStr(now);
     QryInsertProdutos.ParamByName('datanow').AsString := datanow;
     QryInsertProdutos.ExecSQL;
-    QryMaxChave1.ApplyUpdates;
+    QryMaxChave.ApplyUpdates;
     QryInsertProdutos.Connection.Commit;
-
   except
     on E: Exception do
     begin
@@ -122,6 +121,43 @@ begin
     begin
       ShowMessage('Erro ao abrir tabela clientes.' + #13 +
        'Erro: ' + e.Message);
+      Exit;
+    end;
+  end;
+end;
+
+function TDtmdistribuicao.UpdateProdutosServ(mes:string ; ano:string): boolean;
+var
+  cont: Integer;
+begin
+  try
+
+      QryUpdateDescServ.Close;
+      QryUpdateDescServ.SQL.Clear;
+      QryUpdateDescServ.SQL.Add('UPDATE CLI_SERVICOJF SET DESCRICAOSERV = ''MANUTENÇÃO DO SISTEMA '' + P.Aplicacao +  '' - ''  + :mes + ''/'' + :ano +''.''');
+      QryUpdateDescServ.SQL.Add('FROM CLI_SERVICOJF AS JF');
+      QryUpdateDescServ.SQL.Add('INNER JOIN CAD_PRODUTOS AS P');
+      QryUpdateDescServ.SQL.Add('ON JF.PRODUTO = P.PRODUTO');
+      QryUpdateDescServ.SQL.Add('WHERE P.GRUPO = ''0001''');
+
+      QryUpdateDescServ.ParamByName('MES').AsString := mes;
+      QryUpdateDescServ.ParamByName('ANO').AsString := ano;
+
+      QryUpdateDescServ.ExecSQL;
+      QryUpdateDescServ.ApplyUpdates;
+      cont:= QryUpdateDescServ.RowsAffected;
+      QryUpdateDescServ.Connection.Commit;
+
+   if cont >= 1 then
+     begin
+       ShowMessage('Produto salvo, quantidade:' + IntToStr(cont));
+     end;
+
+    except
+    on E: Exception do
+    begin
+      ShowMessage('Erro ao alterar a descrição dos produtos.' +
+      #13 + 'Erro: ' + e.Message);
       Exit;
     end;
   end;

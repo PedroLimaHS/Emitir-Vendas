@@ -5,15 +5,14 @@ object DtmClientes: TDtmClientes
   HorizontalOffset = 891
   VerticalOffset = 65
   Width = 435
-  PPI = 96
   object Qrycliente: TZReadOnlyQuery
     Connection = DtmConexao.zConexao
     SQL.Strings = (
       'select cliente,Nome,Endereco,Bairro,Cidade,UF,CEP,CGC,Fone,email,Bloqueio  from Cad_Clientes'
     )
     Params = <>
-    left = 24
-    top = 16
+    Left = 24
+    Top = 16
     object Qryclientenome: TStringField
       FieldKind = fkData
       FieldName = 'nome'
@@ -128,8 +127,8 @@ object DtmClientes: TDtmClientes
   object QryPsqCliente: TZReadOnlyQuery
     Connection = DtmConexao.zConexao
     Params = <>
-    left = 96
-    top = 16
+    Left = 96
+    Top = 16
     object Qryclientenome1: TStringField
       FieldKind = fkData
       FieldName = 'nome'
@@ -177,8 +176,8 @@ object DtmClientes: TDtmClientes
       'select Faturador,Descricao from Cad_Faturadores'
     )
     Params = <>
-    left = 200
-    top = 16
+    Left = 200
+    Top = 16
     object QryFormapagamentoDescricao: TStringField
       FieldKind = fkData
       FieldName = 'Descricao'
@@ -196,8 +195,8 @@ object DtmClientes: TDtmClientes
       ''
     )
     Params = <>
-    left = 24
-    top = 72
+    Left = 24
+    Top = 72
   end
   object QryServicoCli1: TZQuery
     Connection = DtmConexao.zConexao
@@ -219,8 +218,8 @@ object DtmClientes: TDtmClientes
       '                                  inner join cad_produtos as P on jf.produto = p.produto '
     )
     Params = <>
-    left = 24
-    top = 128
+    Left = 24
+    Top = 128
     object QryServicoCli1Cliente: TStringField
       FieldKind = fkData
       FieldName = 'Cliente'
@@ -338,8 +337,6 @@ object DtmClientes: TDtmClientes
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      MaxValue = 0
-      MinValue = 0
       Precision = 8
     end
     object QryServicoCli1descricaoserv: TStringField
